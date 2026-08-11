@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily-Weekly Report — Aug 4 – 18, 2026 · Sheraton Milwaukee Brookfield</title>
+<title>BEO Packet — Aug 11–25, 2026 · Sheraton Milwaukee Brookfield</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--bg:#f5f4f0;--surface:#fff;--border:#ddd9d0;--text:#1a1814;--muted:#7a7570;--accent:#b5813a;--accent-light:#f5ede0;--group:#2f6b4f;--group-bg:#edf6f0;--local:#3c6bc4;--local-bg:#e8f0fe;--dnp:#c0392b;--dnp-bg:#fdf2f0;--tag-bg:#eceae5}
+  :root{--bg:#f5f4f0;--surface:#fff;--border:#ddd9d0;--text:#1a1814;--muted:#7a7570;--accent:#b5813a;--accent-light:#f5ede0;--group:#2f6b4f;--group-bg:#edf6f0;--local:#3c6bc4;--local-bg:#e8f0fe;--dnp:#c0392b;--dnp-bg:#fdf2f0;--rev:#8a5cb8;--rev-bg:#f3edfa;--tag-bg:#eceae5}
   body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
   .site-header{background:var(--text);color:#fff;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
   .site-header .brand{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#ccc9c0}
@@ -41,7 +41,7 @@
   .badge{font-size:10px;font-family:'DM Mono',monospace;padding:3px 8px;border-radius:4px;background:var(--tag-bg);color:var(--muted);white-space:nowrap}
   .badge.group{background:var(--group-bg);color:var(--group)}
   .badge.local{background:var(--local-bg);color:var(--local)}
-  .badge.inhouse{background:#f0ede0;color:#8a7a3a}
+  .badge.revised{background:var(--rev-bg);color:var(--rev)}
   .fn-table{width:100%;border-collapse:collapse;font-size:12.5px}
   .fn-table th{text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:8px 10px 6px;border-bottom:1px solid var(--border);background:#fcfcfa}
   .fn-table td{padding:7px 10px;border-bottom:1px solid #f0ede8;color:var(--text);vertical-align:top}
@@ -54,6 +54,7 @@
   .fn-att .g{color:var(--group);font-weight:500}
   .fn-order{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--muted);text-align:right}
   .dnp-pill{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.05em;padding:2px 5px;border-radius:3px;background:var(--dnp-bg);color:var(--dnp);margin-left:6px}
+  .rental{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--accent)}
   th.col-att,td.col-att{text-align:right}
   th.col-ord,td.col-ord{text-align:right}
   .site-footer{text-align:center;padding:20px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);font-family:'DM Mono',monospace}
@@ -68,256 +69,195 @@
 <body>
 <header class="site-header">
   <div>
-    <div class="brand">Sheraton Milwaukee Brookfield · Definite Events</div>
-    <h1>Daily-Weekly Report · August 4 – 18, 2026</h1>
+    <div class="brand">Sheraton Milwaukee Brookfield · Banquet Event Orders</div>
+    <h1>BEO Packet · August 11 – 25, 2026</h1>
   </div>
-  <div class="meta">Printed: Aug 3, 2026 · 12:49 PM<br>Status filter: Definite · Internal Use Only</div>
+  <div class="meta">Printed: Mon, Aug 10, 2026<br>Source: Event Order packet · Internal Use Only</div>
 </header>
 <div class="summary-bar" id="summaryBar"></div>
 <nav class="tab-bar" id="tabBar"></nav>
 <main id="mainContent"></main>
 <footer class="site-footer">Sheraton Milwaukee Brookfield · 375 S Moorland Rd, Brookfield WI 53005 · Marriott Proprietary &amp; Confidential — Not for external distribution</footer>
 <script>
+// Each event: org, contact, postAs, quote, folio, biz('Group'|'Local'), team, revised, fns[]
+// fn: {time, type, space, style, order, dnp, rental, att, post} — sub-rows use {time, type, post, att, sub:true}
 const days=[
-{key:"aug4",label:"Tue Aug 4",date:"Tuesday, August 4, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329439",att:"25/—/—"}]},
-  {org:"ABB Inc.",contact:"Jodi Cooper",postAs:"ABB Solutions Meeting AUG2026",quote:"M-WHRSY9P",folio:"1554079",biz:"Local",team:"EM1: Sheldon Williams · SM1: Melinda Massey",fns:[
-    {time:"8:00 AM–5:00 PM",type:"Meeting",space:"Milwaukee 1-2",style:"Special",order:"408254",att:"35/38/—"},
-    {time:"8:00–10:00 AM",type:"Coffee Break",dnp:true,att:"35/38/—",sub:true},
-    {time:"12:00–1:00 PM",type:"Lunch Buffet",dnp:true,att:"35/38/—",sub:true},
-    {time:"3:00–3:30 PM",type:"PM Break",att:"35/38/—",sub:true}]}
-]},
-{key:"aug5",label:"Wed Aug 5",date:"Wednesday, August 5, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329439",att:"25/—/—"}]},
-  {org:"LensCrafters",contact:"Tracy Schatten",postAs:"LenCrafters Breakfast Meeting",quote:"M-WNVFN1I",folio:"1555325",biz:"Local",team:"EM1: Sheldon Williams · SM1: Melinda Massey",fns:[
-    {time:"7:00–9:30 AM",type:"Room Ready",space:"Wisconsin 1-2",style:"U-Shape",order:"317116",dnp:true,att:"18/20/20"},
-    {time:"7:00–8:30 AM",type:"Breakfast",att:"18/18/20",sub:true},
-    {time:"7:45–9:30 AM",type:"Meeting",att:"18/20/20",sub:true}]},
-  {org:"ABB Inc.",contact:"Jodi Cooper",postAs:"ABB Solutions Meeting AUG2026",quote:"M-WHRSY9P",folio:"1554079",biz:"Local",team:"EM1: Sheldon Williams · SM1: Melinda Massey",fns:[
-    {time:"8:00–10:00 AM",type:"Coffee Break",space:"",style:"",order:"408288",dnp:true,att:"35/38/—"},
-    {time:"8:00 AM–5:00 PM",type:"Meeting",space:"Milwaukee 1-2",style:"Special",order:"408288",att:"35/38/—"},
-    {time:"12:00–1:00 PM",type:"Lunch Buffet",att:"35/38/—",sub:true},
-    {time:"3:00–3:30 PM",type:"PM Break",space:"",style:"",order:"408288",att:"35/38/—"}]},
-  {org:"Morrow Soil and Water Conservation",contact:"Jamie Bailey",postAs:"Morrow Soil and Water Conservation",quote:"M-VY9N1LH",folio:"1527614",biz:"Group",team:"EM1: Sheldon Williams · SM1: James Dobbe",fns:[
-    {time:"3:00–11:00 PM",type:"Dinner",space:"Brookfield 1-2",style:"Rounds of 8",order:"409158",att:"55/56/—"},
-    {time:"4:30–6:00 PM",type:"Dinner",att:"56/55/—",sub:true},
-    {time:"6:00–9:00 PM",type:"Off Site",dnp:true,att:"56/—/—",sub:true,post:"Off Site Ballgame event"}]}
-]},
-{key:"aug6",label:"Thu Aug 6",date:"Thursday, August 6, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329439",att:"25/—/—"}]},
-  {org:"Square Dance Association of Wisconsin",contact:"Wayne Irwin",postAs:"Wisconsin Square and Round Dance Convention 2026",quote:"M-U1UHAHK",folio:"1477198",biz:"Group",team:"EM1: Martelle Shaw · SM1: Kaylene Falkowski",fns:[
-    {time:"6:00 AM–10:30 PM",type:"Special",space:"Brookfield 1-2-3-4-5",style:"Special",order:"636820",att:"400/—/—",post:"Set Up/Pre-Conv Dance"}]},
-  {org:"ABB Inc.",contact:"Jodi Cooper",postAs:"ABB Solutions Meeting AUG2026",quote:"M-WHRSY9P",folio:"1554079",biz:"Local",team:"EM1: Sheldon Williams · SM1: Melinda Massey",fns:[
-    {time:"8:00–10:00 AM",type:"Coffee Break",space:"",style:"",order:"408326",dnp:true,att:"35/38/—"},
-    {time:"8:00 AM–5:00 PM",type:"Meeting",space:"Milwaukee 1-2",style:"Special",order:"408326",att:"35/38/—"},
-    {time:"12:00–1:00 PM",type:"Lunch Buffet",att:"35/38/—",sub:true},
-    {time:"3:00–3:30 PM",type:"PM Break",space:"",style:"",order:"408326",att:"35/38/—"}]}
-]},
-{key:"aug7",label:"Fri Aug 7",date:"Friday, August 7, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329439",att:"25/—/—"}]},
-  {org:"Square Dance Association of Wisconsin",contact:"Wayne Irwin",postAs:"Wisconsin Square and Round Dance Convention 2026",quote:"M-U1UHAHK",folio:"1477198",biz:"Group",team:"EM1: Martelle Shaw · SM1: Kaylene Falkowski",fns:[
-    {time:"9:00 AM–11:00 PM",type:"Special",space:"Moorland 1-2-3",style:"Special",order:"636862",att:"250/—/—",post:"Youth Hall"},
-    {time:"9:00 AM–11:00 PM",type:"Special",space:"Moorland 5",style:"",order:"636926",att:"15/—/—",post:"Caller/Cuer Hospitality Room"},
-    {time:"9:00 AM–11:00 PM",type:"Special",space:"Wisconsin 1-2",style:"Special",order:"636910",att:"100/—/—",post:"Small Ballroom"},
-    {time:"9:00 AM–11:00 PM",type:"Special",space:"Wisconsin 3-4",style:"Special",order:"636846",att:"150/—/—",post:"Multi Purpose Room | Storage"},
-    {time:"9:00 AM–11:00 PM",type:"Special",space:"Brookfield 1-2-3-4-5",style:"Special",order:"636878",att:"400/—/—",post:"Large Ballroom"},
-    {time:"9:00 AM–11:00 PM",type:"Special",space:"Milwaukee 1-2",style:"Special",order:"636894",att:"250/—/—",post:"Medium Ballroom"}]},
-  {org:"ABB Inc.",contact:"Jodi Cooper",postAs:"ABB Solutions Meeting AUG2026",quote:"M-WHRSY9P",folio:"1554079",biz:"Local",team:"EM1: Sheldon Williams · SM1: Melinda Massey",fns:[
-    {time:"11:30 AM–4:00 PM",type:"Lunch",space:"Wisconsin 6",style:"Special",order:"408360",att:"35/38/—",post:"Meeting/Lunch"},
-    {time:"11:00 AM–12:30 PM",type:"Box Lunch",att:"35/38/—",sub:true,post:"Lunch"}]}
-]},
-{key:"aug8",label:"Sat Aug 8",date:"Saturday, August 8, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329439",att:"25/—/—"}]},
-  {org:"Square Dance Association of Wisconsin",contact:"Wayne Irwin",postAs:"Wisconsin Square and Round Dance Convention 2026",quote:"M-U1UHAHK",folio:"1477198",biz:"Group",team:"EM1: Martelle Shaw · SM1: Kaylene Falkowski",fns:[
-    {time:"8:00 AM–5:00 PM",type:"Meeting",space:"Wisconsin 6",style:"Theatre",order:"636942",att:"100/—/—",post:"Education/Meeting Room"},
-    {time:"8:00 AM–5:00 PM",type:"Meeting",space:"Wisconsin 7",style:"Theatre",order:"636958",att:"100/—/—",post:"Education/Meeting Room"},
-    {time:"8:00 AM–11:30 PM",type:"Special",space:"Moorland 1-2-3",style:"Special",order:"637041",att:"250/—/—",post:"Youth Hall"},
-    {time:"10:00 AM–3:00 PM",type:"Special",att:"100/—/—",sub:true,post:"Fashion Show"},
-    {time:"2:00–5:00 PM",type:"Special",att:"20/—/—",sub:true,post:"Youth Pizza Party &amp; Pool Time"},
-    {time:"8:00 AM–11:30 PM",type:"Special",space:"Moorland 4",style:"",order:"637077",att:"1/—/—",post:"Fashion Show Changing Room"},
-    {time:"8:00 AM–11:30 PM",type:"Special",space:"Moorland 5",style:"",order:"637061",att:"15/—/—",post:"Caller/Cuer Hospitality Room"},
-    {time:"8:00 AM–11:30 PM",type:"Special",space:"Wisconsin 1-2",style:"Special",order:"637009",att:"100/—/—",post:"Small Ballroom"},
-    {time:"8:00 AM–11:30 PM",type:"Special",space:"Wisconsin 3-4",style:"Special",order:"637025",att:"150/—/—",post:"Multi Purpose Room | Storage"},
-    {time:"8:00 AM–11:30 PM",type:"Special",space:"Brookfield 1-2-3-4-5",style:"Special",order:"636974",att:"400/—/—",post:"Large Ballroom"},
-    {time:"8:30–9:00 PM",type:"Special",att:"250/—/—",sub:true,post:"Ice Cream Social"},
-    {time:"8:00 AM–11:30 PM",type:"Special",space:"Milwaukee 1-2",style:"Special",order:"636993",att:"250/—/—",post:"Medium Ballroom"}]}
-]},
-{key:"aug9",label:"Sun Aug 9",date:"Sunday, August 9, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329478",att:"25/—/—"}]},
-  {org:"Square Dance Association of Wisconsin",contact:"Wayne Irwin",postAs:"Wisconsin Square and Round Dance Convention 2026",quote:"M-U1UHAHK",folio:"1477198",biz:"Group",team:"EM1: Martelle Shaw · SM1: Kaylene Falkowski",fns:[
-    {time:"8:00 AM–3:00 PM",type:"Special",space:"Moorland 1-2-3",style:"Special",order:"637144",att:"250/—/—",post:"Youth Hall"},
-    {time:"8:00 AM–3:00 PM",type:"Special",space:"Wisconsin 1-2",style:"",order:"280974",att:"1/—/—",post:"Small Ballroom"},
-    {time:"8:00 AM–3:00 PM",type:"Special",space:"Wisconsin 3-4",style:"Special",order:"637160",att:"150/—/—",post:"Multi Purpose Room | Storage"},
-    {time:"8:00 AM–3:00 PM",type:"Special",space:"Wisconsin 6",style:"Theatre",order:"637109",att:"100/—/—",post:"Education and Meeting Rooms"},
-    {time:"8:00 AM–3:00 PM",type:"Special",space:"Wisconsin 7",style:"Theatre",order:"637176",att:"100/—/—",post:"Education and Meeting Rooms"},
-    {time:"8:00 AM–3:00 PM",type:"Special",space:"Milwaukee 1-2",style:"Special",order:"637125",att:"250/—/—",post:"Medium Ballroom"},
-    {time:"7:30–9:00 AM",type:"Breakfast",att:"50/—/60",sub:true,post:"Caller &amp; Cuer - Plated Breakfast"},
-    {time:"8:00 AM–5:00 PM",type:"Special",space:"Moorland 5",style:"",order:"637208",att:"15/—/—",post:"Caller/Cuer Hospitality Room"},
-    {time:"8:00 AM–5:00 PM",type:"Special",space:"Brookfield 1-2-3-4-5",style:"Special",order:"637192",att:"400/—/—",post:"Large Ballroom"}]}
-]},
-{key:"aug10",label:"Mon Aug 10",date:"Monday, August 10, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329478",att:"25/—/—"}]},
-  {org:"Susan B. Anthony Pro-Life America",contact:"Erica Caporaletti",postAs:"SBA Meeting August 2026",quote:"M-WGHAU1D",folio:"1550919",biz:"Group",team:"SM1: James Dobbe",fns:[
-    {time:"7:30 AM–10:30 PM",type:"Meeting",space:"Brookfield 1-2-3",style:"Rounds of 8",order:"430804",att:"75/—/—"}]},
-  {org:"Hessler Worldwide",contact:"Jim Kraxner",postAs:"Hessler Worldwide Meeting Aug2026",quote:"M-WMXXL9I",folio:"1555509",biz:"Group",team:"EM1: Sheldon Williams · SM1: Melinda Massey",fns:[
-    {time:"8:00 AM–5:00 PM",type:"Board Meeting",space:"Elmbrook Boardroom",style:"",order:"922211",att:"15/—/—"}]}
-]},
 {key:"aug11",label:"Tue Aug 11",date:"Tuesday, August 11, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329478",att:"25/—/—"}]},
-  {org:"Susan B. Anthony Pro-Life America",contact:"Erica Caporaletti",postAs:"SBA Meeting August 2026",quote:"M-WGHAU1D",folio:"1550919",biz:"Group",team:"SM1: James Dobbe",fns:[
-    {time:"7:30 AM–10:30 PM",type:"Meeting",space:"Brookfield 1-2-3",style:"Rounds of 8",order:"430839",att:"75/—/—"},
-    {time:"8:30–9:30 AM",type:"Breakfast Buffet",dnp:true,att:"75/—/—",sub:true},
+  {org:"Susan B. Anthony Pro-Life America",contact:"Erica Caporaletti",postAs:"SBA Meeting August 2026",quote:"M-WGHAU1D",folio:"1550919",biz:"Group",team:"Manager: —",fns:[
+    {time:"7:30 AM–10:30 PM",type:"Meeting",space:"Brookfield 1-2-3",style:"",order:"430839",att:"75/85/—"},
+    {time:"7:30 AM–9:30 PM",type:"Breakfast Buffet",dnp:true,att:"75/—/—",sub:true},
     {time:"7:30–8:30 PM",type:"Dinner",dnp:true,att:"75/—/—",sub:true}]},
-  {org:"Hessler Worldwide",contact:"Jim Kraxner",postAs:"Hessler Worldwide Meeting Aug2026",quote:"M-WMXXL9I",folio:"1555509",biz:"Group",team:"EM1: Sheldon Williams · SM1: Melinda Massey",fns:[
-    {time:"8:00 AM–5:00 PM",type:"Board Meeting",space:"Elmbrook Boardroom",style:"",order:"922242",att:"15/—/—"}]},
-  {org:"Aptean",contact:"Morgan Jameson",postAs:"Aptean Customer Meeting AUG2026",quote:"M-WM6B4GO",folio:"1553174",biz:"Group",team:"EM1: Sheldon Williams · SM1: Melinda Massey",fns:[
-    {time:"1:00–5:00 PM",type:"General Rental",space:"Milwaukee 1-2",style:"Classroom",order:"409314",att:"50/60/60",post:"Aptean Customer Meeting"},
-    {time:"2:00–4:30 PM",type:"Meeting",att:"50/—/—",sub:true},
-    {time:"2:00–4:30 PM",type:"Beverage Package",att:"50/—/—",sub:true}]},
-  {org:"National Baptist Convention of the USA Incorporated HQ",contact:"Leonard Cractic Jr",postAs:"Walter Cade Jr. Midwest States Workshop Oct2026",quote:"M-V3ZK7Z6",folio:"1514731",biz:"Group",team:"EM1: Martelle Shaw · SM1: Kaylene Falkowski",fns:[
-    {time:"2:00–3:00 PM",type:"Menu Tasting",space:"The Craft Room",style:"",order:"664185",dnp:true,att:"1/—/—"}]}
+  {org:"Hessler Worldwide",contact:"Mr. Jim Kraxner",postAs:"Hessler Worldwide Meeting Aug2026",quote:"M-WMXXL9I",folio:"1555509",biz:"Local",team:"Manager: Sheldon Williams",fns:[
+    {time:"8:00 AM–5:00 PM",type:"Board Meeting",space:"Elmbrook Boardroom",style:"U-Shape",order:"922242",rental:"$133.00",att:"15/—/—"},
+    {time:"8:00–9:00 AM",type:"Breakfast · Executive Buffet",att:"15/—/—",sub:true}]},
+  {org:"Aptean",contact:"Morgan Jameson",postAs:"Aptean Customer Meeting AUG2026",quote:"M-WM6B4GO",folio:"1553174",biz:"Local",team:"Manager: —",fns:[
+    {time:"12:00–1:00 PM",type:"Set Up",space:"Milwaukee 1-2",style:"",order:"409314",att:"50/40/40",post:"Directional signage — Aptean WorkWise User Group"},
+    {time:"1:00–5:00 PM",type:"General Rental",space:"Milwaukee 1-2",style:"Classroom",order:"409314",rental:"$350.00",att:"50/40/40",post:"Aptean Customer Meeting"},
+    {time:"2:00–4:30 PM",type:"Beverage Package",att:"50/—/—",sub:true},
+    {time:"2:00–4:30 PM",type:"Meeting",att:"50/—/—",sub:true}]},
+  {org:"National Baptist Convention of the USA Inc. HQ",contact:"Leonard Cractic Jr",postAs:"Walter Cade Jr. Midwest States Workshop Oct2026",quote:"M-V3ZK7Z6",folio:"1514731",biz:"Group",team:"Manager: Martelle Shaw",fns:[
+    {time:"2:00–3:00 PM",type:"Menu Tasting",space:"The Craft Room",style:"",order:"664185",dnp:true,att:"4/—/—"}]}
 ]},
 {key:"aug12",label:"Wed Aug 12",date:"Wednesday, August 12, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329478",att:"25/—/—"}]},
-  {org:"Susan B. Anthony Pro-Life America",contact:"Erica Caporaletti",postAs:"SBA Meeting August 2026",quote:"M-WGHAU1D",folio:"1550919",biz:"Group",team:"SM1: James Dobbe",fns:[
-    {time:"7:30 AM–10:30 PM",type:"Meeting",space:"Brookfield 1-2-3",style:"Rounds of 8",order:"430870",att:"75/—/—"},
-    {time:"8:30–9:30 AM",type:"Breakfast Buffet",dnp:true,att:"75/—/—",sub:true},
-    {time:"7:30–8:30 PM",type:"Dinner",dnp:true,att:"75/—/—",sub:true}]},
-  {org:"CONFAB for Planners",contact:"Victor Dinh",postAs:"CONFAB for Planners Aug 2026",quote:"M-VUZ8AN3",folio:"1540476",biz:"Group",team:"EM1: Martelle Shaw · SM1: Nicole Slemin",fns:[
-    {time:"8:00–10:00 AM",type:"Set Up",space:"Milwaukee 1-2",style:"",order:"932340",att:"20/—/—",post:"Set Up + Supplier Arrival"}]},
-  {org:"Hessler Worldwide",contact:"Jim Kraxner",postAs:"Hessler Worldwide Meeting Aug2026",quote:"M-WMXXL9I",folio:"1555509",biz:"Group",team:"EM1: Sheldon Williams · SM1: Melinda Massey",fns:[
-    {time:"8:00 AM–5:00 PM",type:"Board Meeting",space:"Elmbrook Boardroom",style:"",order:"922252",att:"15/—/—"}]},
-  {org:"Norandex",contact:"Chris Nies",postAs:"Norandex Meeting AUG2026",quote:"M-WKXMOYA",folio:"1550820",biz:"Local",team:"SM1: Melinda Massey",fns:[
-    {time:"8:00 AM–3:00 PM",type:"General Session",space:"Moorland 1-2-3",style:"Classroom",order:"921954",att:"60/—/—",post:"Meeting"},
-    {time:"9:00–10:00 AM",type:"Continental Breakfast",att:"30/—/—",sub:true},
-    {time:"12:00–1:00 PM",type:"Lunch Buffet",dnp:true,att:"30/—/—",sub:true,post:"DO NOT POST"}]}
+  {org:"Susan B. Anthony Pro-Life America",contact:"Erica Caporaletti",postAs:"SBA Meeting August 2026",quote:"M-WGHAU1D",folio:"1550919",biz:"Group",team:"Manager: —",revised:true,fns:[
+    {time:"7:30 AM–10:30 PM",type:"Meeting",space:"Brookfield 1-2-3",style:"",order:"430870",att:"75/85/—"},
+    {time:"7:30–9:00 AM",type:"Breakfast Buffet",dnp:true,att:"60/85/—",sub:true},
+    {time:"7:30–8:30 PM",type:"Dinner · Taco Bar Buffet",dnp:true,att:"75/85/—",sub:true}]},
+  {org:"Hessler Worldwide",contact:"Mr. Jim Kraxner",postAs:"Hessler Worldwide Meeting Aug2026",quote:"M-WMXXL9I",folio:"1555509",biz:"Local",team:"Manager: Sheldon Williams",fns:[
+    {time:"8:00 AM–5:00 PM",type:"Board Meeting",space:"Elmbrook Boardroom",style:"U-Shape",order:"922252",rental:"$133.00",att:"15/—/—"},
+    {time:"8:00–9:00 AM",type:"Breakfast · Executive Buffet",att:"15/—/—",sub:true}]},
+  {org:"Norandex",contact:"Chris Nies",postAs:"Norandex Meeting AUG2026",quote:"M-WKXMOYA",folio:"1550820",biz:"Local",team:"Manager: —",fns:[
+    {time:"8:00 AM–3:00 PM",type:"General Session",space:"Moorland 2-3",style:"Classroom",order:"921954",att:"30/25/32",post:"Post As: Meeting · AV Package $642.60"},
+    {time:"9:00–10:00 AM",type:"Continental Breakfast",att:"30/—/—",sub:true,post:"Post As: Breakfast"},
+    {time:"12:00–1:00 PM",type:"Lunch Buffet · Deli Board",att:"30/—/—",sub:true}]},
+  {org:"VEG ER for Pets",contact:"Ally Kerner",postAs:"VEG ER for Pets — Exotics Workshop",quote:"M-WOOE28G",folio:"1556616",biz:"Local",team:"Manager: —",fns:[
+    {time:"9:00 AM–6:00 PM",type:"Meeting",space:"Wisconsin 1-2",style:"",order:"536958",rental:"$300.00",att:"20/—/—"}]}
 ]},
 {key:"aug13",label:"Thu Aug 13",date:"Thursday, August 13, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329478",att:"25/—/—"}]},
-  {org:"Susan B. Anthony Pro-Life America",contact:"Erica Caporaletti",postAs:"SBA Meeting August 2026",quote:"M-WGHAU1D",folio:"1550919",biz:"Group",team:"SM1: James Dobbe",fns:[
-    {time:"7:30 AM–10:30 PM",type:"Meeting",space:"Brookfield 1-2-3",style:"Rounds of 8",order:"430901",att:"75/—/—"},
-    {time:"8:30–9:30 AM",type:"Breakfast Buffet",dnp:true,att:"75/—/—",sub:true},
-    {time:"7:30–8:30 PM",type:"Dinner",dnp:true,att:"75/—/—",sub:true}]},
-  {org:"CONFAB for Planners",contact:"Victor Dinh",postAs:"CONFAB for Planners Aug 2026",quote:"M-VUZ8AN3",folio:"1540476",biz:"Group",team:"EM1: Martelle Shaw · SM1: Nicole Slemin",fns:[
-    {time:"10:30 AM–2:00 PM",type:"Trade Show",space:"Milwaukee 1-2",style:"Classroom",order:"932351",att:"40/—/—"},
+  {org:"Susan B. Anthony Pro-Life America",contact:"Erica Caporaletti",postAs:"SBA Meeting August 2026",quote:"M-WGHAU1D",folio:"1550919",biz:"Group",team:"Manager: —",revised:true,fns:[
+    {time:"7:30 AM–10:30 PM",type:"Meeting",space:"Brookfield 1-2-3",style:"",order:"430901",att:"75/85/—"},
+    {time:"7:30 AM–9:30 PM",type:"Breakfast Buffet",dnp:true,att:"75/—/—",sub:true},
+    {time:"7:30–9:30 AM",type:"Breakfast · Modified Buffet",dnp:true,att:"60/85/—",sub:true},
+    {time:"7:30–8:30 PM",type:"Dinner · Pizzeria Buffet",dnp:true,att:"75/85/—",sub:true}]},
+  {org:"CONFAB for Planners",contact:"Victor Dinh",postAs:"CONFAB for Planners Aug 2026",quote:"M-VUZ8AN3",folio:"1540476",biz:"Local",team:"Manager: Martelle Shaw",fns:[
+    {time:"8:00–10:00 AM",type:"Set Up",space:"Milwaukee 1-2",style:"",order:"932351",att:"20/—/—",post:"Set Up + Supplier Arrival"},
+    {time:"10:30 AM–2:00 PM",type:"Trade Show",space:"Milwaukee 1-2",style:"Crescent Rounds",order:"932351",att:"40/—/—"},
     {time:"10:30–11:00 AM",type:"AM Break",att:"40/—/—",sub:true,post:"Welcome Bev + Apps"},
-    {time:"12:00–1:30 PM",type:"Lunch",att:"40/—/—",sub:true}]}
+    {time:"11:45 AM–1:30 PM",type:"Beverage Package",dnp:true,att:"40/—/—",sub:true},
+    {time:"12:00–1:30 PM",type:"Lunch · Sliders & Sides",att:"40/—/—",sub:true}]}
 ]},
 {key:"aug14",label:"Fri Aug 14",date:"Friday, August 14, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329478",att:"25/—/—"}]},
-  {org:"Wisconsin Upper Michigan Circle K",contact:"Justin Hahn",postAs:"Wisconsin Upper-Michigan Kiwanis Convention Aug 2026",quote:"M-VDFEYWU",folio:"1516156",biz:"Group",team:"EM1: Martelle Shaw · SM1: Jonathan Jennings",fns:[
-    {time:"7:00 AM–11:55 PM",type:"Registration",space:"Milwaukee 1 Pre-Function",style:"Registration",order:"758300",att:"1/6/6",post:"Registration and Credentials"},
-    {time:"8:00–10:00 AM",type:"Meeting",space:"Wisconsin 1",style:"Hollow Square",order:"758330",att:"20/20/20",post:"Board/Trustee Breakfast and Board Meeting"},
-    {time:"12:00 PM–11:55 PM",type:"Exhibits",space:"Milwaukee 2 Pre-Function",style:"Exhibits",order:"758473",att:"25/1/1",post:"Exhibits - Prefunction Area"},
-    {time:"5:00–11:00 PM",type:"Meeting",space:"Milwaukee 1",style:"Hollow Square",order:"758330",att:"100/20/20"},
-    {time:"6:00–7:00 PM",type:"Reception",space:"Milwaukee 2",style:"Cocktail Rounds",order:"758311",att:"100/70/70",post:"Convention Orientation and Dessert Reception"},
+  {org:"Wisconsin Upper Michigan Circle K",contact:"Mr. Justin Hahn",postAs:"Wisconsin Upper-Michigan Kiwanis Convention Aug 2026",quote:"M-VDFEYWU",folio:"1516156",biz:"Group",team:"Manager: Martelle Shaw",fns:[
+    {time:"7:00 AM–11:55 PM",type:"Registration",space:"Milwaukee 1 Pre-Function",style:"6' Skirted Table",order:"758300",att:"1/6/6",post:"Registration and Credentials"},
+    {time:"8:00–10:00 AM",type:"Meeting",space:"Wisconsin 1",style:"",order:"758330",att:"20/19/20",post:"Board/Trustee Breakfast and Board Meeting"},
+    {time:"12:00 PM–11:55 PM",type:"Exhibits",space:"Milwaukee 2 Pre-Function",style:"Exhibit Tables / Basket Raffles",order:"758473",att:"25/1/1",post:"Exhibits — Prefunction Area"},
+    {time:"5:00–11:00 PM",type:"Meeting",space:"Milwaukee 1",style:"",order:"758330",rental:"$500.00",att:"100/20/20"},
+    {time:"6:00–7:00 PM",type:"Reception",space:"Milwaukee 2",style:"",order:"758311",rental:"$500.00",att:"100/70/70",post:"Convention Orientation and Dessert Reception"},
     {time:"7:00–8:00 PM",type:"Meeting",att:"70/—/—",sub:true,post:"Service Project"}]}
 ]},
 {key:"aug15",label:"Sat Aug 15",date:"Saturday, August 15, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329478",att:"25/—/—"}]},
-  {org:"Wisconsin Upper Michigan Circle K",contact:"Justin Hahn",postAs:"Wisconsin Upper-Michigan Kiwanis Convention Aug 2026",quote:"M-VDFEYWU",folio:"1516156",biz:"Group",team:"EM1: Martelle Shaw · SM1: Jonathan Jennings",fns:[
-    {time:"7:00–8:00 AM",type:"Breakout",space:"Wisconsin 2",style:"Theatre",order:"758510",att:"30/15/15",post:"Past Governor Meeting and Past Lieutenant Governor"},
-    {time:"7:00 AM–11:55 PM",type:"Exhibits",space:"Milwaukee 2 Pre-Function",style:"Exhibits",order:"758880",att:"25/1/1",post:"Exhibits - Prefunction Area"},
-    {time:"7:00 AM–11:55 PM",type:"Breakout",space:"Wisconsin 1",style:"Hollow Square",order:"758573",att:"30/20/20",post:"Key Club District Board Meeting"},
-    {time:"7:30 AM–4:00 PM",type:"Registration",space:"Milwaukee 1 Pre-Function",style:"Registration",order:"758562",att:"1/6/6",post:"Registration and Credentials"},
-    {time:"8:00–9:00 AM",type:"Breakfast",space:"Milwaukee 2",style:"Cocktail Rounds",order:"758606",att:"30/50/50",post:"Awards Breakfast"},
-    {time:"9:00–11:00 AM",type:"Breakout",space:"Milwaukee 1",style:"Theatre",order:"758661",att:"30/50/50",post:"Kiawanis Talks"},
-    {time:"11:15–11:45 AM",type:"Breakout",space:"Wisconsin 2",style:"Theatre",order:"758749",att:"30/20/20",post:"Division Caucuses"},
-    {time:"11:15–11:45 AM",type:"Breakout",space:"Wisconsin 3",style:"Theatre",order:"758703",att:"30/20/20",post:"Division Caucuses"},
-    {time:"11:15–11:45 AM",type:"Breakout",space:"Wisconsin 6",style:"Theatre",order:"758715",att:"30/20/20",post:"Division Caucuses"},
-    {time:"11:15–11:45 AM",type:"Breakout",space:"Wisconsin 7",style:"Theatre",order:"758737",att:"30/20/20",post:"Division Caucuses"},
-    {time:"12:00–2:00 PM",type:"Lunch",space:"Milwaukee 2",style:"Rounds of 10",order:"758759",att:"100/100/100"},
-    {time:"2:00–3:00 PM",type:"Breakout",space:"Wisconsin 2",style:"Theatre",order:"758942",att:"20/20/20",post:"Workshop Session"},
-    {time:"3:15–4:00 PM",type:"Breakout",att:"20/—/—",sub:true,post:"Workshop Session"},
-    {time:"2:00–3:00 PM",type:"Breakout",space:"Wisconsin 3",style:"Theatre",order:"759124",att:"20/20/20",post:"Workshop Session"},
-    {time:"3:15–4:00 PM",type:"Breakout",att:"20/—/—",sub:true,post:"Workshop Session"},
-    {time:"2:00–3:00 PM",type:"Breakout",space:"Wisconsin 4",style:"Theatre",order:"759140",att:"20/20/20",post:"Workshop Session"},
-    {time:"3:15–4:00 PM",type:"Breakout",att:"20/—/—",sub:true,post:"Workshop Session"},
-    {time:"2:00–4:00 PM",type:"Meeting",space:"Moorland 2",style:"Classroom",order:"758897",att:"20/20/20",post:"Club Leadership Education"},
-    {time:"4:00–5:30 PM",type:"General Session",space:"Milwaukee 1",style:"Theatre",order:"759155",att:"100/100/100",post:"Refreshment Break/KDF Basket Raffle and House of D"},
-    {time:"5:30–6:30 PM",type:"Cocktail Reception",space:"Milwaukee 2",style:"Rounds of 10",order:"759382",att:"80/80/80"},
-    {time:"6:30–8:00 PM",type:"Dinner",space:"Milwaukee 2",style:"Rounds of 10",order:"759382",att:"100/80/80",post:"Dinner and Family Game Night"}]},
-  {org:"Wisconsin Department of Health Services — Bureau of Community Forensics",contact:"Chantel Wiedmeyer",postAs:"WI DHS-DPH Event 13709",quote:"M-VFUOMN0",folio:"1549862",biz:"Group",team:"EM1: Martelle Shaw · SM1: James Dobbe",fns:[
-    {time:"8:00 AM–4:00 PM",type:"Special",space:"Moorland 1",style:"U-Shape",order:"417999",att:"4/4/4",post:"BEI Rating Session"},
-    {time:"9:00–10:00 AM",type:"Breakfast",att:"6/4/4",sub:true},
-    {time:"12:00–1:00 PM",type:"Lunch",att:"6/4/4",sub:true},
+  {org:"Wisconsin Upper Michigan Circle K",contact:"Mr. Justin Hahn",postAs:"Wisconsin Upper-Michigan Kiwanis Convention Aug 2026",quote:"M-VDFEYWU",folio:"1516156",biz:"Group",team:"Manager: Martelle Shaw",revised:true,fns:[
+    {time:"7:00 AM–11:55 PM",type:"Exhibits",space:"Milwaukee 2 Pre-Function",style:"Exhibit Tables / Basket Raffles",order:"758880",att:"25/1/1",post:"Exhibits — Prefunction Area"},
+    {time:"7:00 AM–11:55 PM",type:"Breakout",space:"Wisconsin 1",style:"Existing Setup",order:"758573",att:"30/20/20",post:"Key Club District Board Meeting"},
+    {time:"7:00–8:00 AM",type:"Breakout",space:"Wisconsin 2",style:"Theatre",order:"758510",att:"30/15/15",post:"Past Governor & Past Lieutenant Governor Meeting"},
+    {time:"7:30 AM–4:00 PM",type:"Registration",space:"Milwaukee 1 Pre-Function",style:"6' Skirted Table",order:"758562",att:"1/6/6",post:"Registration and Credentials"},
+    {time:"8:00–9:00 AM",type:"Breakfast",space:"Milwaukee 2",style:"",order:"758606",att:"30/61/64",post:"Awards Breakfast · All American Plated"},
+    {time:"9:00–11:00 AM",type:"Breakout",space:"Milwaukee 1",style:"",order:"758661",att:"30/50/50",post:"Kiwanis Talks"},
+    {time:"11:15–11:45 AM",type:"Breakout",space:"Wisconsin 2",style:"",order:"758749",att:"30/20/20",post:"Division Caucuses"},
+    {time:"11:15–11:45 AM",type:"Breakout",space:"Wisconsin 3",style:"",order:"758703",att:"30/20/20",post:"Division Caucuses"},
+    {time:"11:15–11:45 AM",type:"Breakout",space:"Wisconsin 6",style:"",order:"758715",att:"30/20/20",post:"Division Caucuses"},
+    {time:"11:15–11:45 AM",type:"Breakout",space:"Wisconsin 7",style:"",order:"758737",att:"30/20/20",post:"Division Caucuses"},
+    {time:"12:00–2:00 PM",type:"Lunch · Taco Bar Buffet",space:"Milwaukee 2",style:"",order:"758759",att:"100/97/100"},
+    {time:"2:00–3:00 PM",type:"Breakout",space:"Wisconsin 2",style:"",order:"758942",att:"20/20/20",post:"Workshop Session"},
+    {time:"3:15–4:00 PM",type:"Breakout · Workshop Session",att:"20/—/—",sub:true},
+    {time:"2:00–3:00 PM",type:"Breakout",space:"Wisconsin 3",style:"",order:"759124",att:"20/20/20",post:"Workshop Session"},
+    {time:"3:15–4:00 PM",type:"Breakout · Workshop Session",att:"20/—/—",sub:true},
+    {time:"2:00–3:00 PM",type:"Breakout",space:"Wisconsin 4",style:"",order:"759140",att:"20/20/20",post:"Workshop Session"},
+    {time:"3:15–4:00 PM",type:"Breakout · Workshop Session",att:"20/—/—",sub:true},
+    {time:"2:00–4:00 PM",type:"Meeting",space:"Moorland 2",style:"",order:"758897",att:"20/20/20",post:"Club Leadership Education"},
+    {time:"4:00–5:30 PM",type:"General Session",space:"Milwaukee 1",style:"",order:"759155",rental:"$1,000.00",att:"100/80/100",post:"Refreshment Break / KDF Basket Raffle and House of D"},
+    {time:"5:30–6:30 PM",type:"Cocktail Reception",space:"Milwaukee 2",style:"Cash Call Bar",order:"759382",att:"80/80/80"},
+    {time:"6:30–8:00 PM",type:"Dinner · Chicken Piccata Plated",space:"Milwaukee 2",style:"",order:"759382",att:"100/74/80",post:"Dinner and Family Game Night"}]},
+  {org:"WI DHS — Bureau of Community Forensics",contact:"—",postAs:"WI DHS-DPH Event 13709",quote:"M-VFUOMN0",folio:"1549862",biz:"Group",team:"Manager: Martelle Shaw",fns:[
+    {time:"8:00 AM–4:00 PM",type:"Special",space:"Moorland 1",style:"",order:"417999",att:"4/4/4",post:"BEI Rating Session"},
+    {time:"9:00–10:00 AM",type:"Breakfast · State per Diem",att:"6/4/4",sub:true},
+    {time:"12:00–1:00 PM",type:"Lunch · State per Diem Plated",att:"6/4/4",sub:true},
     {time:"2:00–2:30 PM",type:"PM Break",att:"6/4/4",sub:true}]},
-  {org:"Dinner Detectives",contact:"Chris Mayse",postAs:"The Dinner Detective Aug 2026",quote:"M-VNTN5YW",folio:"1520787",biz:"Local",team:"EM1: Zach Taylor · SM1: Zach Taylor",fns:[
-    {time:"5:00–10:00 PM",type:"Dinner",space:"Brookfield 1-2-3",style:"Rounds of 8",order:"*",att:"1/—/—"},
+  {org:"Dinner Detectives",contact:"Chris Mayse",postAs:"The Dinner Detective Aug 2026",quote:"M-VNTN5YW",folio:"1520787",biz:"Local",team:"Manager: Zach Taylor",fns:[
+    {time:"5:00–10:00 PM",type:"Dinner",space:"Brookfield 1-2-3",style:"",order:"008338",att:"1/—/—"},
     {time:"6:00–7:00 PM",type:"Dinner",att:"30/—/—",sub:true}]}
 ]},
 {key:"aug16",label:"Sun Aug 16",date:"Sunday, August 16, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329517",att:"25/—/—"}]},
-  {org:"Midwest Music Marketplace",contact:"Brian Boyer",postAs:"Milwaukee MusicFest - AUG26",quote:"M-W13VYGH",folio:"1529808",biz:"Local",team:"SM1: Kaylene Falkowski",fns:[
-    {time:"6:00 AM–6:00 PM",type:"Trade Show",space:"Brookfield 1-2-3",style:"Exhibits",order:"744917",dnp:true,att:"40/—/—",post:"Milwaukee MusicFest"},
+  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"Manager: —",fns:[
+    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"",order:"329517",rental:"$135.00",att:"25/—/—",post:"7 posted meeting orders — 25 EXP each"}]},
+  {org:"Midwest Music Marketplace",contact:"Brian Boyer",postAs:"Milwaukee MusicFest — AUG26",quote:"M-W13VYGH",folio:"1529808",biz:"Local",team:"Manager: —",fns:[
+    {time:"6:00 AM–6:00 PM",type:"Trade Show",space:"Brookfield 1-2-3",style:"Exhibits",order:"744917",rental:"$650.00",dnp:true,att:"40/—/—",post:"Milwaukee MusicFest"},
     {time:"7:00–9:59 AM",type:"Set Up",dnp:true,att:"1/—/—",sub:true,post:"Client Set Up"},
     {time:"8:00–9:59 AM",type:"Set Up",dnp:true,att:"58/—/—",sub:true,post:"Vendor Set Up"},
     {time:"10:00 AM–5:00 PM",type:"Trade Show",att:"40/—/—",sub:true,post:"Milwaukee MusicFest"}]},
-  {org:"Wisconsin Upper Michigan Circle K",contact:"Justin Hahn",postAs:"Wisconsin Upper-Michigan Kiwanis Convention Aug 2026",quote:"M-VDFEYWU",folio:"1516156",biz:"Group",team:"EM1: Martelle Shaw · SM1: Jonathan Jennings",fns:[
-    {time:"7:00 AM–2:00 PM",type:"Breakout",space:"Wisconsin 1",style:"Hollow Square",order:"123171",att:"30/20/20",post:"Key Club District Board Meeting"},
-    {time:"8:00–9:00 AM",type:"Breakfast",space:"Milwaukee 2",style:"Rounds of 10",order:"759420",att:"40/40/40",post:"Breakfast with the Governor"},
-    {time:"9:00–10:00 AM",type:"Special",space:"Milwaukee 1",style:"Theatre",order:"513477",att:"40/40/40",post:"Memorial Service"},
-    {time:"10:00 AM–12:00 PM",type:"Board Meeting",space:"Milwaukee 1",style:"Hollow Square",order:"513491",att:"20/20/20",post:"2026-2027 Board Meeting"}]},
-  {org:"Wisconsin Department of Health Services — Bureau of Community Forensics",contact:"Chantel Wiedmeyer",postAs:"WI DHS-DPH Event 13709",quote:"M-VFUOMN0",folio:"1549862",biz:"Group",team:"EM1: Martelle Shaw · SM1: James Dobbe",fns:[
-    {time:"8:00 AM–4:00 PM",type:"Special",space:"Moorland 1",style:"U-Shape",order:"418157",att:"4/4/4",post:"BEI Rating Session"},
-    {time:"9:00–10:00 AM",type:"Breakfast",att:"6/4/4",sub:true},
-    {time:"12:00–1:00 PM",type:"Lunch",att:"6/4/4",sub:true},
-    {time:"2:00–2:30 PM",type:"PM Break",att:"6/4/4",sub:true}]},
-  {org:"Wisconsin Evangelical Lutheran Synod — WELS",contact:"Jill Doering",postAs:"WELS World Missions Aug2026",quote:"M-WOB7600",folio:"1555184",biz:"Group",team:"SM1: Nicole Slemin",fns:[
-    {time:"5:00 PM–2:00 AM",type:"Hospitality Room",space:"",style:"Special",order:"*",att:"7/—/—"}]}
+  {org:"Wisconsin Upper Michigan Circle K",contact:"Mr. Justin Hahn",postAs:"Wisconsin Upper-Michigan Kiwanis Convention Aug 2026",quote:"M-VDFEYWU",folio:"1516156",biz:"Group",team:"Manager: Martelle Shaw",fns:[
+    {time:"7:00 AM–2:00 PM",type:"Breakout",space:"Wisconsin 1",style:"Existing Setup",order:"123171",att:"30/20/20",post:"Key Club District Board Meeting"},
+    {time:"8:00–9:00 AM",type:"Breakfast",space:"Milwaukee 2",style:"",order:"759420",att:"40/37/40",post:"Breakfast with the Governor"},
+    {time:"9:00–10:00 AM",type:"Special",space:"Milwaukee 1",style:"",order:"513477",att:"40/40/40",post:"Memorial Service"},
+    {time:"10:00 AM–12:00 PM",type:"Board Meeting",space:"Milwaukee 1",style:"",order:"513491",att:"20/20/20",post:"2026-2027 Board Meeting"}]},
+  {org:"WI DHS — Bureau of Community Forensics",contact:"—",postAs:"WI DHS-DPH Event 13709",quote:"M-VFUOMN0",folio:"1549862",biz:"Group",team:"Manager: Martelle Shaw",fns:[
+    {time:"8:00 AM–4:00 PM",type:"Special",space:"Moorland 1",style:"",order:"418157",att:"4/4/4",post:"BEI Rating Session"},
+    {time:"9:00–10:00 AM",type:"Breakfast · Continental",att:"6/4/4",sub:true},
+    {time:"12:00–1:00 PM",type:"Lunch · Penne Pasta Buffet",att:"6/4/4",sub:true},
+    {time:"2:00–2:30 PM",type:"PM Break",att:"6/4/4",sub:true}]}
 ]},
-{key:"aug17",label:"Mon Aug 17",date:"Monday, August 17, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329517",att:"25/—/—"}]},
-  {org:"Wisconsin Evangelical Lutheran Synod — WELS",contact:"Jill Doering",postAs:"WELS World Missions Aug2026",quote:"M-WOB7600",folio:"1555184",biz:"Group",team:"SM1: Nicole Slemin",fns:[
-    {time:"5:00 PM–2:00 AM",type:"Hospitality Room",space:"",style:"Special",order:"*",att:"7/—/—"}]}
-]},
+{key:"aug17",label:"Mon Aug 17",date:"Monday, August 17, 2026",events:[]},
 {key:"aug18",label:"Tue Aug 18",date:"Tuesday, August 18, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329517",att:"25/—/—"}]},
-  {org:"Wisconsin Evangelical Lutheran Synod — WELS",contact:"Karen Martinez",postAs:"WELS Christian Giving Counselors Aug2026",quote:"M-WNI98B5",folio:"1554071",biz:"Group",team:"SM1: Nicole Slemin",fns:[
-    {time:"6:00–11:59 PM",type:"Hospitality Room",space:"",style:"Rounds of 8",order:"*",att:"10/—/—"}]}
+  {org:"Wisconsin Evangelical Lutheran Synod — WELS",contact:"Karen Martinez",postAs:"WELS Christian Giving Counselors Aug2026",quote:"M-WNI98B5",folio:"1554071",biz:"Group",team:"Manager: —",fns:[
+    {time:"6:00–11:59 PM",type:"Hospitality Room",space:"Wisconsin 6",style:"Rounds of 8",order:"647104",att:"10/—/—"}]}
+]},
+{key:"aug19",label:"Wed Aug 19",date:"Wednesday, August 19, 2026",events:[
+  {org:"Conserv FS",contact:"Cary Featherstone",postAs:"Conserv FS Employee Meeting AUG2026",quote:"M-WGK554A",folio:"1548024",biz:"Group",team:"Manager: Zach Taylor",fns:[
+    {time:"7:00 AM–6:00 PM",type:"General Session",space:"Brookfield 1-2-3-4-5",style:"",order:"311299",rental:"$2,000.00",att:"35/—/—"},
+    {time:"7:00–8:00 AM",type:"Breakfast Buffet",att:"35/—/—",sub:true,post:"Post As: Breakfast"},
+    {time:"12:00–1:00 PM",type:"Lunch Buffet",att:"35/—/—",sub:true},
+    {time:"2:00–4:00 PM",type:"Breakout · U-Shape Setup",att:"30/—/—",sub:true}]},
+  {org:"Please & Thank You, Inc.",contact:"Mr. Brendan Hannah",postAs:"Wilson Center Julian Lage Master Class Event Aug2026",quote:"M-W5DDXEY",folio:"1544161",biz:"Local",team:"Manager: —",fns:[
+    {time:"1:00–5:00 PM",type:"Registration",space:"Lobby",style:"",order:"311287",att:"2/—/—",post:"Welcome Table w/ 1 Chair"}]},
+  {org:"Wisconsin Evangelical Lutheran Synod — WELS",contact:"Karen Martinez",postAs:"WELS Christian Giving Counselors Aug2026",quote:"M-WNI98B5",folio:"1554071",biz:"Group",team:"Manager: —",fns:[
+    {time:"6:00–11:59 PM",type:"Hospitality Room",space:"Wisconsin 6",style:"Rounds of 8",order:"647134",att:"10/—/—"}]}
+]},
+{key:"aug20",label:"Thu Aug 20",date:"Thursday, August 20, 2026",events:[
+  {org:"Conserv FS",contact:"Cary Featherstone",postAs:"Conserv FS Employee Meeting AUG2026",quote:"M-WGK554A",folio:"1548024",biz:"Group",team:"Manager: Zach Taylor",fns:[
+    {time:"7:00 AM–6:00 PM",type:"General Session",space:"Brookfield 1-2-3-4-5",style:"",order:"083494",att:"80/—/—"},
+    {time:"7:00–8:00 AM",type:"Breakfast Buffet",att:"80/—/—",sub:true},
+    {time:"12:00–1:00 PM",type:"Lunch Buffet",att:"80/—/—",sub:true},
+    {time:"2:00–4:00 PM",type:"Breakout · Brookfield 1-2-3-4-5 — MKE1",att:"30/—/—",sub:true}]}
+]},
+{key:"aug21",label:"Fri Aug 21",date:"Friday, August 21, 2026",events:[
+  {org:"Conserv FS",contact:"Cary Featherstone",postAs:"Conserv FS Employee Meeting AUG2026",quote:"M-WGK554A",folio:"1548024",biz:"Group",team:"Manager: Zach Taylor",fns:[
+    {time:"7:00 AM–6:00 PM",type:"General Session",space:"Brookfield 1-2-3-4-5",style:"",order:"083519",att:"80/—/—"},
+    {time:"7:00–8:00 AM",type:"Breakfast Buffet",att:"100/—/—",sub:true},
+    {time:"12:00–1:00 PM",type:"Lunch Buffet",att:"100/—/—",sub:true},
+    {time:"2:00–4:00 PM",type:"Breakout · U-Shape Setup",att:"30/—/—",sub:true}]}
+]},
+{key:"aug22",label:"Sat Aug 22",date:"Saturday, August 22, 2026",events:[]},
+{key:"aug23",label:"Sun Aug 23",date:"Sunday, August 23, 2026",events:[
+  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"Manager: —",fns:[
+    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"",order:"329556",rental:"$135.00",att:"25/—/—",post:"7 posted meeting orders — 25 EXP each"}]}
+]},
+{key:"aug24",label:"Mon Aug 24",date:"Monday, August 24, 2026",events:[
+  {org:"TTI — Techtronic Industries",contact:"Claudia Giovine",postAs:"Techtronic Industries North America AUG2026",quote:"M-W261FOF",folio:"1544592",biz:"Group",team:"Manager: —",fns:[
+    {time:"5:00–8:00 PM",type:"General Rental",space:"Brookfield 5",style:"Rounds of 40 + High Boys",order:"650834",att:"50/—/—"},
+    {time:"5:30–7:00 PM",type:"Cocktail Reception · Cash Call Bar",att:"50/—/—",sub:true,post:"Techtronic Industries | Welcome Reception"}]}
+]},
+{key:"aug25",label:"Tue Aug 25",date:"Tuesday, August 25, 2026",events:[
+  {org:"Related Companies (Main)",contact:"Cathrine Boerschinger",postAs:"Related Affordable Management AUG2026",quote:"M-WMGZ6IY",folio:"1553130",biz:"Group",team:"Manager: —",fns:[
+    {time:"9:00 AM–5:00 PM",type:"Meeting",space:"Wisconsin 7",style:"",order:"083596",att:"6/—/—"},
+    {time:"8:30–9:00 AM",type:"Breakfast",att:"6/—/—",sub:true},
+    {time:"8:30 AM–5:00 PM",type:"Beverage Package",att:"6/—/—",sub:true},
+    {time:"12:00–1:00 PM",type:"Lunch",att:"6/—/—",sub:true},
+    {time:"2:00–2:30 PM",type:"PM Break",att:"6/—/—",sub:true}]}
 ]}
 ];
 
+// ---- Summary stats ----
 const totalEvents=days.reduce((s,d)=>s+d.events.length,0);
 const groupCount=days.reduce((s,d)=>s+d.events.filter(e=>e.biz==="Group").length,0);
 const localCount=days.reduce((s,d)=>s+d.events.filter(e=>e.biz==="Local").length,0);
 const activeDays=days.filter(d=>d.events.length>0).length;
 document.getElementById('summaryBar').innerHTML=`
-  <div class="stat"><span class="num">${totalEvents}</span><span class="lbl">Definite Event Orders</span></div>
+  <div class="stat"><span class="num">${totalEvents}</span><span class="lbl">Event Orders</span></div>
   <div class="stat"><span class="num">${groupCount}</span><span class="lbl">Group Business</span></div>
   <div class="stat"><span class="num">${localCount}</span><span class="lbl">Local Business</span></div>
-  <div class="stat"><span class="num">${activeDays}/15</span><span class="lbl">Days with Events</span></div>`;
+  <div class="stat"><span class="num">${activeDays}/${days.length}</span><span class="lbl">Days with Events</span></div>`;
 
+// ---- Render ----
 const tabBar=document.getElementById('tabBar');
 const mainContent=document.getElementById('mainContent');
 
 function attCell(att){
+  // highlight GTD (middle) in green if present
   const parts=(att||"").split("/");
   if(parts.length===3 && parts[1].trim()!=="—" && parts[1].trim()!==""){
     return `${parts[0]}/<span class="g">${parts[1]}</span>/${parts[2]}`;
   }
   return att||"";
-}
-
-function bizClassName(b){
-  if(b==="Group")return "group";
-  if(b==="Local")return "local";
-  return "inhouse";
 }
 
 days.forEach((day,i)=>{
@@ -336,19 +276,19 @@ days.forEach((day,i)=>{
   const div=document.createElement('div');
   div.className='tab-content'+(i===0?' active':'');
   div.id='tab-'+day.key;
-  div.innerHTML=`<div class="day-header"><h2>${day.date}</h2><span class="day-meta">${day.events.length} definite event${day.events.length!==1?'s':''}</span></div>`;
+  div.innerHTML=`<div class="day-header"><h2>${day.date}</h2><span class="day-meta">${day.events.length} event order${day.events.length!==1?'s':''}</span></div>`;
 
   const grid=document.createElement('div');
   grid.className='events-grid';
 
   if(day.events.length===0){
-    grid.innerHTML=`<div style="padding:30px;text-align:center;color:var(--muted);font-size:13px;background:var(--surface);border:1px dashed var(--border);border-radius:8px">No definite events on this date.</div>`;
+    grid.innerHTML=`<div style="padding:30px;text-align:center;color:var(--muted);font-size:13px;background:var(--surface);border:1px dashed var(--border);border-radius:8px">No event orders on this date.</div>`;
   }
 
   day.events.forEach(ev=>{
     const card=document.createElement('div');
     card.className='event-card';
-    const bizClass=bizClassName(ev.biz);
+    const bizClass=ev.biz==="Group"?"group":"local";
     const rows=ev.fns.map(f=>{
       if(f.sub){
         return `<tr class="sub">
@@ -360,7 +300,7 @@ days.forEach((day,i)=>{
       }
       return `<tr>
         <td class="fn-time">${f.time}</td>
-        <td>${f.type}${f.dnp?'<span class="dnp-pill">DNP</span>':''}${f.post?`<br><span style="color:var(--muted);font-size:11px">${f.post}</span>`:''}${f.style?`<br><span style="color:var(--muted);font-size:10.5px;font-family:'DM Mono',monospace">${f.style}</span>`:''}</td>
+        <td>${f.type}${f.dnp?'<span class="dnp-pill">DNP</span>':''}${f.post?`<br><span style="color:var(--muted);font-size:11px">${f.post}</span>`:''}${f.style?`<br><span style="color:var(--muted);font-size:10.5px;font-family:'DM Mono',monospace">${f.style}</span>`:''}${f.rental?`<br><span class="rental">Rental ${f.rental}</span>`:''}</td>
         <td class="fn-space">${f.space||''}</td>
         <td class="fn-att">${attCell(f.att)}</td>
         <td class="fn-order col-ord">${f.order||''}</td>
@@ -376,6 +316,7 @@ days.forEach((day,i)=>{
         </div>
         <div class="badges">
           <span class="badge ${bizClass}">${ev.biz}</span>
+          ${ev.revised?'<span class="badge revised">Revised</span>':''}
         </div>
       </div>
       <table class="fn-table">
