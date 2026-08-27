@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily-Weekly Report — Aug 18 – Sep 1, 2026 · Sheraton Milwaukee Brookfield</title>
+<title>Daily-Weekly Report — Aug 25 – Sep 8, 2026 · Sheraton Milwaukee Brookfield</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -68,9 +68,9 @@
 <header class="site-header">
   <div>
     <div class="brand">Sheraton Milwaukee Brookfield · Definite Events</div>
-    <h1>Daily-Weekly Report · August 18 – September 1, 2026</h1>
+    <h1>Daily-Weekly Report · August 25 – September 8, 2026</h1>
   </div>
-  <div class="meta">Printed: Aug 17, 2026 · 12:33 PM · for Brooke Steinbach<br>Status filter: Definite · Internal Use Only</div>
+  <div class="meta">Printed: Aug 24, 2026 · 1:23 PM · for Brooke Steinbach<br>Status filter: Definite · Internal Use Only</div>
 </header>
 <div class="summary-bar" id="summaryBar"></div>
 <nav class="tab-bar" id="tabBar"></nav>
@@ -80,98 +80,43 @@
 // Each event: org, contact, postAs, quote, folio, biz('Group'|'Local'), team, fns[]
 // fn: {time, type, space, style, order, dnp, att} — sub-rows use {time, type, post, att, sub:true}
 const days=[
-{key:"aug18",label:"Tue Aug 18",date:"Tuesday, August 18, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329517",att:"25/—/—"}]},
-  {org:"SmartStop Self Storage",contact:"Larry McCrea",postAs:"SmartStop Self Storage Meeting Aug2026",quote:"M-WPZ6CI0",folio:"1557461",biz:"Group",team:"SM1: Nicole Slemin",fns:[
-    {time:"9:30 AM–1:00 PM",type:"Meeting",space:"Elmbrook Boardroom",style:"",order:"165367",att:"7/—/—"}]}
-]},
-{key:"aug19",label:"Wed Aug 19",date:"Wednesday, August 19, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329517",att:"25/—/—"}]},
-  {org:"Conserv FS",contact:"Cary Featherstone",postAs:"Conserv FS Employee Meeting AUG2026",quote:"M-WGK554A",folio:"1548024",biz:"Group",team:"EM1: Zach Taylor · SM1: Melinda Massey · Free Parking",fns:[
-    {time:"1:00–3:00 PM",type:"General Session",space:"Brookfield 3",style:"U-Shape",order:"311299",att:"35/—/—",post:"AG Meeting"},
-    {time:"1:00–3:00 PM",type:"General Session",space:"Brookfield 4",style:"U-Shape",order:"311299",att:"35/35/35",post:"Turf Meeting"}]},
-  {org:"Please & Thank You, Inc.",contact:"Brendan Hannah",postAs:"Wilson Center Julian Lage Master Class Event Aug2026",quote:"M-W5DDXEY",folio:"1544161",biz:"Group",team:"SM1: Nicole Slemin",fns:[
-    {time:"1:00–5:00 PM",type:"Registration",space:"Lobby",style:"Registration",order:"311287",att:"2/—/—",post:"Welcome Table w/ 1 Chair"}]},
-  {org:"Wisconsin Evangelical Lutheran Synod — WELS",contact:"Karen Martinez",postAs:"WELS Christian Giving Counselors Aug2026",quote:"M-WNI98B5",folio:"1554071",biz:"Group",team:"SM1: Nicole Slemin",fns:[
-    {time:"6:00–11:59 PM",type:"Hospitality Room",space:"Wisconsin 6",style:"Rounds of 8",order:"647134",att:"10/—/—"}]}
-]},
-{key:"aug20",label:"Thu Aug 20",date:"Thursday, August 20, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329517",att:"25/—/—"}]},
-  {org:"Conserv FS",contact:"Cary Featherstone",postAs:"Conserv FS Employee Meeting AUG2026",quote:"M-WGK554A",folio:"1548024",biz:"Group",team:"EM1: Zach Taylor · SM1: Melinda Massey · Free Parking",fns:[
-    {time:"7:00 AM–6:00 PM",type:"General Session",space:"Brookfield 3",style:"U-Shape",order:"083494",att:"1/35/35",post:"AG Meeting"},
-    {time:"7:00 AM–6:00 PM",type:"General Session",space:"Brookfield 1-2",style:"Rounds of 10",order:"083494",att:"80/—/—"},
-    {time:"7:00–8:30 AM",type:"Breakfast Buffet",att:"80/90/—",sub:true},
-    {time:"12:00–1:00 PM",type:"Lunch Buffet",att:"80/90/—",sub:true},
-    {time:"7:00 AM–6:00 PM",type:"General Session",space:"Brookfield 4",style:"U-Shape",order:"083494",att:"1/35/35",post:"Turf Meeting"},
-    {time:"7:00 AM–6:00 PM",type:"General Session",space:"Brookfield 5",style:"U-Shape",order:"083494",att:"1/25/25",post:"Energy"}]}
-]},
-{key:"aug21",label:"Fri Aug 21",date:"Friday, August 21, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329517",att:"25/—/—"}]},
-  {org:"Conserv FS",contact:"Cary Featherstone",postAs:"Conserv FS Employee Meeting AUG2026",quote:"M-WGK554A",folio:"1548024",biz:"Group",team:"EM1: Zach Taylor · SM1: Melinda Massey · Free Parking",fns:[
-    {time:"7:00 AM–6:00 PM",type:"General Session",space:"Brookfield 3",style:"U-Shape",order:"083519",att:"1/35/35",post:"AG Meeting"},
-    {time:"7:00 AM–6:00 PM",type:"General Session",space:"Brookfield 1-2",style:"Rounds of 10",order:"083519",att:"80/—/—"},
-    {time:"7:00–8:30 AM",type:"Breakfast Buffet",att:"100/50/—",sub:true},
-    {time:"11:15 AM–1:00 PM",type:"Lunch Buffet",att:"100/36/—",sub:true},
-    {time:"7:00 AM–6:00 PM",type:"General Session",space:"Brookfield 4",style:"U-Shape",order:"083519",att:"1/35/35",post:"Turf Meeting"},
-    {time:"7:00 AM–6:00 PM",type:"General Session",space:"Brookfield 5",style:"U-Shape",order:"083519",att:"1/25/25",post:"Energy"}]}
-]},
-{key:"aug22",label:"Sat Aug 22",date:"Saturday, August 22, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329517",att:"25/—/—"}]},
-  {org:"Dinner Detectives",contact:"Chris Mayse",postAs:"The Dinner Detective Aug 2026",quote:"M-VNTN5YW",folio:"1520787",biz:"Local",team:"EM1: Zach Taylor · SM1: Zach Taylor",fns:[
-    {time:"2:00–4:00 PM",type:"Set Up",space:"Brookfield 4-5",style:"",order:"228460",dnp:true,att:"1/—/—"},
-    {time:"4:00–10:00 PM",type:"Hospitality Room",space:"Hertz Office",style:"",order:"228498",dnp:true,att:"1/—/—",post:"Green Room"},
-    {time:"4:00–10:00 PM",type:"Dinner",space:"Brookfield 4-5",style:"Rounds of 8",order:"228460",att:"30/—/—"},
-    {time:"6:00–10:00 PM",type:"Reception",dnp:true,att:"30/—/—",sub:true,post:"Bar/Salad/Appetizers"},
-    {time:"7:00–8:30 PM",type:"Dinner",dnp:true,att:"30/—/—",sub:true},
-    {time:"9:00–10:00 PM",type:"PM Break",dnp:true,att:"30/—/—",sub:true,post:"Dessert"}]}
-]},
-{key:"aug23",label:"Sun Aug 23",date:"Sunday, August 23, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329556",att:"25/—/—"}]}
-]},
-{key:"aug24",label:"Mon Aug 24",date:"Monday, August 24, 2026",events:[
-  {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329556",att:"25/—/—"}]},
-  {org:"Wisconsin Evangelical Lutheran Synod — WELS",contact:"Jill Doering",postAs:"WELS Home Mission Aug2026 — Rooms Only",quote:"M-WPC6IR5",folio:"1556684",biz:"Group",team:"SM1: Nicole Slemin",fns:[
-    {time:"6:00–8:00 PM",type:"Dinner",space:"",style:"Conference",order:"*",att:"10/—/—"}]}
-]},
 {key:"aug25",label:"Tue Aug 25",date:"Tuesday, August 25, 2026",events:[
   {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
     {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329556",att:"25/—/—"}]},
   {org:"Related Companies (Main)",contact:"Cathrine Boerschinger",postAs:"Related Affordable Management AUG2026",quote:"M-WMGZ6IY",folio:"1553130",biz:"Group",team:"SM1: Melinda Massey",fns:[
-    {time:"9:00 AM–5:00 PM",type:"Meeting",space:"Wisconsin 7",style:"Rounds of 6",order:"083596",att:"6/—/—"},
-    {time:"8:30–9:00 AM",type:"Breakfast",att:"6/—/—",sub:true},
-    {time:"8:30 AM–5:00 PM",type:"Beverage Package",att:"6/—/—",sub:true},
-    {time:"12:00–1:00 PM",type:"Lunch",att:"6/—/—",sub:true},
-    {time:"2:00–2:30 PM",type:"PM Break",att:"6/—/—",sub:true}]},
+    {time:"8:00 AM–5:00 PM",type:"Meeting",space:"Wisconsin 7",style:"Rounds of 6",order:"083596",att:"6/—/—"},
+    {time:"8:30–9:00 AM",type:"Breakfast",att:"6/5/—",sub:true},
+    {time:"8:30 AM–5:00 PM",type:"Beverage Package",att:"6/5/—",sub:true},
+    {time:"11:30 AM–12:30 PM",type:"Lunch",att:"6/5/—",sub:true},
+    {time:"2:00–2:30 PM",type:"PM Break",att:"6/5/—",sub:true}]},
   {org:"TTI",contact:"Claudia Giovine",postAs:"Techtronic Industries North America AUG2026",quote:"M-W261FOF",folio:"1544592",biz:"Group",team:"SM1: Melinda Massey · Free Parking",fns:[
     {time:"5:00–8:00 PM",type:"General Rental",space:"Brookfield 5",style:"Special",order:"650834",att:"100/—/—"},
     {time:"5:30–7:00 PM",type:"Cocktail Reception",att:"50/—/—",sub:true,post:"Techtronic Industries | Welcome Reception"}]},
   {org:"Wisconsin Evangelical Lutheran Synod — WELS",contact:"Jill Doering",postAs:"WELS Home Mission Aug2026 — Rooms Only",quote:"M-WPC6IR5",folio:"1556684",biz:"Group",team:"SM1: Nicole Slemin",fns:[
-    {time:"5:00 PM–2:00 AM",type:"Hospitality Room",space:"",style:"Rounds of 8",order:"*",att:"35/—/—"}]}
+    {time:"5:00 PM–2:00 AM",type:"Hospitality Room",space:"",style:"Rounds of 8",order:"788320",att:"35/—/—"}]}
 ]},
 {key:"aug26",label:"Wed Aug 26",date:"Wednesday, August 26, 2026",events:[
   {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
     {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329556",att:"25/—/—"}]},
+  {org:"Infineon",contact:"Paul Denham",postAs:"Infineon Meeting AUG2026",quote:"M-WQO3NO0",folio:"1558279",biz:"Local",team:"EM1: Brooke Steinbach · SM1: Melinda Massey · Free Parking",fns:[
+    {time:"8:00 AM–5:00 PM",type:"Breakout",space:"Wisconsin 2",style:"Conference",order:"546341",att:"8/—/—"}]},
   {org:"Related Companies (Main)",contact:"Cathrine Boerschinger",postAs:"Related Affordable Management AUG2026",quote:"M-WMGZ6IY",folio:"1553130",biz:"Group",team:"SM1: Melinda Massey",fns:[
-    {time:"9:00 AM–5:00 PM",type:"Meeting",space:"Wisconsin 7",style:"Rounds of 6",order:"083612",att:"6/—/—"},
-    {time:"8:30–9:00 AM",type:"Breakfast",att:"6/—/—",sub:true},
-    {time:"8:30 AM–5:00 PM",type:"Beverage Package",att:"6/—/—",sub:true},
-    {time:"12:00–1:00 PM",type:"Lunch",att:"6/—/—",sub:true},
-    {time:"2:00–2:30 PM",type:"PM Break",att:"6/—/—",sub:true}]},
+    {time:"8:00 AM–5:00 PM",type:"Meeting",space:"Wisconsin 7",style:"Rounds of 6",order:"083612",att:"6/—/—"},
+    {time:"8:30–9:00 AM",type:"Breakfast",att:"6/5/—",sub:true},
+    {time:"8:30 AM–5:00 PM",type:"Beverage Package",att:"6/5/—",sub:true},
+    {time:"11:30 AM–12:30 PM",type:"Lunch",att:"6/5/—",sub:true},
+    {time:"2:00–2:30 PM",type:"PM Break",att:"6/5/—",sub:true}]},
   {org:"Wisconsin Evangelical Lutheran Synod — WELS",contact:"Jill Doering",postAs:"WELS Home Mission Aug2026 — Rooms Only",quote:"M-WPC6IR5",folio:"1556684",biz:"Group",team:"SM1: Nicole Slemin",fns:[
-    {time:"5:00 PM–2:00 AM",type:"Hospitality Room",space:"",style:"Rounds of 8",order:"*",att:"35/—/—"}]}
+    {time:"5:00 PM–2:00 AM",type:"Hospitality Room",space:"",style:"Rounds of 8",order:"788337",att:"35/—/—"}]}
 ]},
 {key:"aug27",label:"Thu Aug 27",date:"Thursday, August 27, 2026",events:[
   {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
     {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329556",att:"25/—/—"}]},
+  {org:"Infineon",contact:"Paul Denham",postAs:"Infineon Meeting AUG2026",quote:"M-WQO3NO0",folio:"1558279",biz:"Local",team:"EM1: Brooke Steinbach · SM1: Melinda Massey · Free Parking",fns:[
+    {time:"8:00 AM–5:00 PM",type:"Breakout",space:"Wisconsin 2",style:"Conference",order:"546781",att:"8/—/—"}]},
   {org:"Related Companies (Main)",contact:"Cathrine Boerschinger",postAs:"Related Affordable Management AUG2026",quote:"M-WMGZ6IY",folio:"1553130",biz:"Group",team:"SM1: Melinda Massey",fns:[
-    {time:"8:30 AM–12:00 PM",type:"Breakfast",space:"Wisconsin 7",style:"Rounds of 6",order:"083628",att:"6/—/—"}]}
+    {time:"8:00 AM–12:00 PM",type:"Breakfast",space:"Wisconsin 7",style:"Rounds of 6",order:"083628",att:"6/—/—"},
+    {time:"8:00 AM–12:00 PM",type:"Beverage Package",att:"25/5/—",sub:true}]}
 ]},
 {key:"aug28",label:"Fri Aug 28",date:"Friday, August 28, 2026",events:[
   {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
@@ -181,8 +126,8 @@ const days=[
   {org:"Ecoshield Pest Solutions",contact:"Steve Taylor",postAs:"EcoShield Solutions August 2026",quote:"M-W0QI94U",folio:"1530065",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
     {time:"6:00 AM–12:00 AM",type:"Meeting",space:"Moorland 7",style:"Special",order:"329556",att:"25/—/—"}]},
   {org:"Just Sisters Women's Organization",contact:"Veneesa Smith",postAs:"Just Sisters AUG26",quote:"M-VXWIP23",folio:"1528474",biz:"Local",team:"SM1: Kaylene Falkowski",fns:[
-    {time:"9:00 AM–5:30 PM",type:"General Rental",space:"Wisconsin 1-2",style:"Rounds of 8",order:"641510",att:"30/—/—",post:"General Rental — Read the Gold Keys"},
-    {time:"12:15–1:30 PM",type:"Lunch Buffet",att:"30/—/—",sub:true}]},
+    {time:"9:00 AM–5:30 PM",type:"General Rental",space:"Milwaukee 2",style:"Rounds of 8",order:"641510",att:"30/30/35",post:"General Rental — Read the Gold Keys"},
+    {time:"12:15–1:30 PM",type:"Lunch Buffet",att:"30/30/35",sub:true}]},
   {org:"Tiles Workshop Chicago",contact:"Hubeyb Yalcin",postAs:"Tiles Workshop Chicago Mosaic Lamp Art Aug2026",quote:"M-WIXKQ11",folio:"1548646",biz:"Local",team:"EM1: Zach Taylor · SM1: Melinda Massey",fns:[
     {time:"9:00 AM–7:00 PM",type:"General Rental",space:"Wisconsin 3-4",style:"Classroom",order:"650511",att:"35/—/30"},
     {time:"9:30–11:00 AM",type:"Set Up",att:"5/—/30",sub:true,post:"Client Set Up"},
@@ -205,7 +150,32 @@ const days=[
     {time:"5:45–6:05 PM",type:"Client Arrival",dnp:true,att:"20/—/—",sub:true},
     {time:"7:15–8:15 PM",type:"Dinner",dnp:true,att:"20/—/—",sub:true}]}
 ]},
-{key:"sep01",label:"Tue Sep 1",date:"Tuesday, September 1, 2026",events:[]}
+{key:"sep01",label:"Tue Sep 1",date:"Tuesday, September 1, 2026",events:[]},
+{key:"sep02",label:"Wed Sep 2",date:"Wednesday, September 2, 2026",events:[
+  {org:"Essilor Luxottica",contact:"Tracy Schatten",postAs:"Essilor Luxottica Breakfast Meeting SEPT2026",quote:"M-WPMHUDF",folio:"1557365",biz:"Local",team:"SM1: Melinda Massey · Free Parking",fns:[
+    {time:"7:00–10:00 AM",type:"Meeting",space:"Wisconsin 1-2",style:"Crescent Rounds",order:"*",att:"18/—/—"},
+    {time:"7:00–8:00 AM",type:"Breakfast",att:"18/—/—",sub:true}]},
+  {org:"Preferred Lines Marketing",contact:"Paula Coomer",postAs:"Midwest Rep Show September 2026",quote:"M-VSEWJUM",folio:"1523147",biz:"Local",team:"EM1: Martelle Shaw · SM1: James Dobbe",fns:[
+    {time:"7:00 AM–2:30 PM",type:"Exhibits",space:"Brookfield 1-2-3-4-5",style:"Exhibits",order:"636252",dnp:true,att:"125/—/—",post:"Midwest Rep Show | September 2026"},
+    {time:"7:00–10:00 AM",type:"Set Up",dnp:true,att:"1/—/—",sub:true},
+    {time:"10:00 AM–1:00 PM",type:"Exhibits",att:"125/—/—",sub:true,post:"Midwest Rep Show"}]}
+]},
+{key:"sep03",label:"Thu Sep 3",date:"Thursday, September 3, 2026",events:[
+  {org:"Expedient",contact:"Doug Theis",postAs:"Expedient Monthly Meeting SEPT2026",quote:"M-WMT4H2Y",folio:"1553278",biz:"Local",team:"SM1: Melinda Massey · Free Parking",fns:[
+    {time:"7:00–11:00 AM",type:"General Rental",space:"Milwaukee 2",style:"Rounds of 8",order:"*",att:"30/—/—"},
+    {time:"7:00–7:30 AM",type:"Set Up",att:"2/—/—",sub:true},
+    {time:"7:30–8:45 AM",type:"Breakfast",att:"35/—/—",sub:true},
+    {time:"8:30–11:00 AM",type:"Meeting",att:"35/—/—",sub:true}]}
+]},
+{key:"sep04",label:"Fri Sep 4",date:"Friday, September 4, 2026",events:[]},
+{key:"sep05",label:"Sat Sep 5",date:"Saturday, September 5, 2026",events:[]},
+{key:"sep06",label:"Sun Sep 6",date:"Sunday, September 6, 2026",events:[]},
+{key:"sep07",label:"Mon Sep 7",date:"Monday, September 7, 2026",events:[]},
+{key:"sep08",label:"Tue Sep 8",date:"Tuesday, September 8, 2026",events:[
+  {org:"Oticon, Inc.",contact:"Melinda Aufmuth",postAs:"Oticon Seminars SEPT2026",quote:"M-WJZRCXV",folio:"1554003",biz:"Local",team:"SM1: Melinda Massey · Free Parking",fns:[
+    {time:"6:00–8:00 PM",type:"Meeting",space:"Milwaukee 1-2",style:"Crescent Rounds",order:"278143",att:"45/31/—",post:"Dinner Presentation"},
+    {time:"6:00–8:00 PM",type:"Dinner",dnp:true,att:"58/31/—",sub:true}]}
+]}
 ];
 
 // ---- Summary stats ----
