@@ -1,360 +1,199 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily-Weekly Report — Oct 20 – Nov 3, 2026 · Sheraton Milwaukee Brookfield</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--bg:#f5f4f0;--surface:#fff;--border:#ddd9d0;--text:#1a1814;--muted:#7a7570;--accent:#b5813a;--accent-light:#f5ede0;--group:#2f6b4f;--group-bg:#edf6f0;--local:#3c6bc4;--local-bg:#e8f0fe;--dnp:#c0392b;--dnp-bg:#fdf2f0;--tag-bg:#eceae5}
-  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-  .site-header{background:var(--text);color:#fff;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-  .site-header .brand{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#ccc9c0}
-  .site-header h1{font-size:17px;font-weight:600;color:#fff;margin-top:2px}
-  .site-header .meta{font-family:'DM Mono',monospace;font-size:11px;color:#888;text-align:right;line-height:1.7}
-  .summary-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 32px;display:flex;gap:32px;flex-wrap:wrap}
-  .stat{display:flex;flex-direction:column}
-  .stat .num{font-family:'DM Mono',monospace;font-size:22px;font-weight:500;color:var(--accent);line-height:1.1}
-  .stat .lbl{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:3px}
-  .tab-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:0 32px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
-  .tab-bar::-webkit-scrollbar{display:none}
-  .tab-btn{padding:13px 15px;font-size:12.5px;font-weight:500;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif;transition:color .15s,border-color .15s}
-  .tab-btn:hover{color:var(--text)}
-  .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
-  .tab-btn .count{display:inline-block;background:var(--tag-bg);color:var(--muted);font-size:10px;font-family:'DM Mono',monospace;padding:1px 6px;border-radius:10px;margin-left:5px;vertical-align:middle}
-  .tab-btn.active .count{background:var(--accent-light);color:var(--accent)}
-  .tab-content{display:none;padding:28px 32px 60px}
-  .tab-content.active{display:block}
-  .day-header{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
-  .day-header h2{font-size:22px;font-weight:600}
-  .day-header .day-meta{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted)}
-  .events-grid{display:grid;gap:14px}
-  .event-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:box-shadow .15s}
-  .event-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.07)}
-  .card-head{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;padding:14px 18px;border-bottom:1px solid var(--border);background:#fafaf8}
-  .org-name{font-size:15px;font-weight:600;line-height:1.3}
-  .post-as{font-size:12px;color:var(--muted);margin-top:3px}
-  .head-meta{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-top:5px;line-height:1.6}
-  .head-meta b{color:var(--text);font-weight:500}
-  .badges{display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end;align-items:flex-start}
-  .badge{font-size:10px;font-family:'DM Mono',monospace;padding:3px 8px;border-radius:4px;background:var(--tag-bg);color:var(--muted);white-space:nowrap}
-  .badge.group{background:var(--group-bg);color:var(--group)}
-  .badge.local{background:var(--local-bg);color:var(--local)}
-  .fn-table{width:100%;border-collapse:collapse;font-size:12.5px}
-  .fn-table th{text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:8px 10px 6px;border-bottom:1px solid var(--border);background:#fcfcfa}
-  .fn-table td{padding:7px 10px;border-bottom:1px solid #f0ede8;color:var(--text);vertical-align:top}
-  .fn-table tr:last-child td{border-bottom:none}
-  .fn-table tr.sub td{background:#fbfaf7;color:var(--muted);font-size:11.5px}
-  .fn-table tr.sub td.fn-post{font-style:italic}
-  .fn-time{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);white-space:nowrap}
-  .fn-space{font-family:'DM Mono',monospace;font-size:11px;color:var(--local)}
-  .fn-att{font-family:'DM Mono',monospace;font-size:11.5px;text-align:right;white-space:nowrap}
-  .fn-att .g{color:var(--group);font-weight:500}
-  .fn-order{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--muted);text-align:right}
-  .dnp-pill{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.05em;padding:2px 5px;border-radius:3px;background:var(--dnp-bg);color:var(--dnp);margin-left:6px}
-  th.col-att,td.col-att{text-align:right}
-  th.col-ord,td.col-ord{text-align:right}
-  .site-footer{text-align:center;padding:20px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);font-family:'DM Mono',monospace}
-  @media(max-width:680px){
-    .site-header,.summary-bar,.tab-bar,.tab-content{padding-left:16px;padding-right:16px}
-    .card-head{grid-template-columns:1fr}
-    .badges{justify-content:flex-start}
-    .fn-table th.col-ord,.fn-table td.col-ord{display:none}
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <meta http-equiv="refresh" content="5;url=https://hkaksu.com/">
+  <title>We've Moved | HKAKSU Workspace</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080e19;
+      --surface: #111b2b;
+      --border: #2c3e56;
+      --text: #f0f5ff;
+      --muted: #a8bad3;
+      --accent: #8daeff;
+      --green: #6ee7c2;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse at 50% 20%, #1a2c4d, transparent 55%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Arial, sans-serif;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 510px;
+      padding: 48px 36px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 24px 80px rgba(0,0,0,.35);
+    }
+
+    .logo {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 20px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #49618a;
+      background: #1a2a43;
+      border-radius: 18px;
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: var(--accent);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 12px 0;
+      font-size: clamp(30px, 6vw, 42px);
+      letter-spacing: -1px;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 14px;
+      margin: 0 auto 26px;
+    }
+
+    .button {
+      display: block;
+      background: #3769c7;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 11px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: background .2s;
+    }
+
+    .button:hover {
+      background: #4d80df;
+    }
+
+    .url {
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--accent);
+    }
+
+    .footer {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .progress {
+      height: 3px;
+      margin-top: 18px;
+      background: #273850;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .progress::before {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      background: var(--green);
+      transform-origin: left;
+      animation: countdown 5s linear forwards;
+    }
+
+    @keyframes countdown {
+      from { transform: scaleX(1); }
+      to { transform: scaleX(0); }
+    }
+
+    @media (max-width: 500px) {
+      .card { padding: 36px 22px; }
+    }
+  </style>
 </head>
+
 <body>
-<header class="site-header">
-  <div>
-    <div class="brand">Sheraton Milwaukee Brookfield · Definite Events</div>
-    <h1>Daily-Weekly Report · October 20 – November 3, 2026</h1>
-  </div>
-  <div class="meta">Printed: Oct 20, 2026 · 12:41 PM · for Brooke Steinbach<br>Status filter: Definite · Internal Use Only</div>
-</header>
-<div class="summary-bar" id="summaryBar"></div>
-<nav class="tab-bar" id="tabBar"></nav>
-<main id="mainContent"></main>
-<footer class="site-footer">Sheraton Milwaukee Brookfield · 375 S Moorland Rd, Brookfield WI 53005 · Marriott Proprietary &amp; Confidential — Not for external distribution</footer>
-<script>
-// Each event: org, contact, postAs, quote, folio, biz('Group'|'Local'), team, fns[]
-// fn: {time, type, space, style, order, dnp, att} — sub-rows use {time, type, post, att, sub:true}
-const days=[
-{key:"oct20",label:"Tue Oct 20",date:"Tuesday, October 20, 2026",events:[
-  {org:"Fisher Asset Management, LLC",contact:"Ava Verdeflor",postAs:"Fisher Forecast Seminar OCT2026",quote:"M-W066KVH",folio:"1549115",biz:"Group",team:"EM1: Brooke Steinbach · SM1: Melinda Massey · Free Parking",fns:[
-    {time:"2:00–10:00 PM",type:"Special",space:"",style:"",order:"805709",att:"1/—/—"},
-    {time:"7:00 AM–5:00 PM",type:"Special",att:"250/—/—",sub:true},
-    {time:"3:00–5:00 PM",type:"Set Up",space:"Brookfield 1-2-3-4-5",style:"Crescent Rounds",order:"914779",att:"176/—/—",post:"Setup"},
-    {time:"5:00–6:30 PM",type:"Registration",att:"250/—/—",sub:true},
-    {time:"3:00–9:00 PM",type:"Board Meeting",space:"Elmbrook Boardroom",style:"",order:"913877",dnp:true,att:"10/10/10",post:"DO NOT POST"},
-    {time:"3:00–9:00 PM",type:"PM Break",att:"10/10/10",sub:true},
-    {time:"5:30–6:30 PM",type:"Reception",space:"Brookfield 1-2-3-4-5",style:"",order:"914779",att:"176/224/208"},
-    {time:"6:30–9:30 PM",type:"Dinner",att:"225/224/208",sub:true,post:"Dinner and Seminar"}]},
-  {org:"RNWBL",contact:"Chelsea Trotta",postAs:"RNWBL Offsite Oct2026",quote:"M-WUJHD0I",folio:"1564901",biz:"Group",team:"SM1: Melinda Massey · Free Parking",fns:[
-    {time:"7:00 AM–5:00 PM",type:"Meeting",space:"Wisconsin 3-4",style:"U-Shape",order:"717997",att:"16/16/16"},
-    {time:"7:00–9:00 AM",type:"Breakfast",att:"16/16/16",sub:true},
-    {time:"11:30 AM–1:00 PM",type:"Lunch",att:"16/16/16",sub:true}]},
-  {org:"Fred Astaire WI — House of Dance LLC",contact:"Ross Lund",postAs:"Fred Astaire Seminar Oct 2026",quote:"M-VUC611E",folio:"1525769",biz:"Local",team:"SM1: Jonathan Jennings",fns:[
-    {time:"8:30 AM–5:00 PM",type:"Meeting",space:"Milwaukee 1-2",style:"Classroom",order:"981632",att:"80/64/80"},
-    {time:"12:00–1:00 PM",type:"Lunch",att:"80/64/80",sub:true}]},
-  {org:"LifeStance Health",contact:"Robert Nohr",postAs:"LifeStance Health De-Escalation Training",quote:"M-WQ6HY6E",folio:"1558766",biz:"Group",team:"EM1: Mario Ortiz · SM1: Melinda Massey · Free Parking",fns:[
-    {time:"9:00 AM–5:00 PM",type:"Meeting",space:"Wisconsin 1-2",style:"Conference",order:"145888",att:"25/30/30"},
-    {time:"8:45–9:00 AM",type:"Breakfast",att:"25/30/30",sub:true},
-    {time:"9:00 AM–4:00 PM",type:"Coffee Break",att:"25/30/30",sub:true},
-    {time:"12:00–1:00 PM",type:"Lunch Buffet",att:"25/36/30",sub:true},
-    {time:"12:00–1:00 PM",type:"Beverage Package",att:"25/30/30",sub:true},
-    {time:"2:30–3:00 PM",type:"PM Break",att:"25/30/30",sub:true}]}
-]},
-{key:"oct21",label:"Wed Oct 21",date:"Wednesday, October 21, 2026",events:[
-  {org:"Fisher Asset Management, LLC",contact:"Ava Verdeflor",postAs:"Fisher Forecast Seminar OCT2026",quote:"M-W066KVH",folio:"1549115",biz:"Group",team:"EM1: Brooke Steinbach · SM1: Melinda Massey · Free Parking",fns:[
-    {time:"7:00–10:00 AM",type:"Set Up",space:"Brookfield 1-2-3-4-5",style:"Crescent Rounds",order:"788237",att:"250/—/—",post:"Setup"},
-    {time:"8:30–9:30 AM",type:"Registration",att:"250/—/—",sub:true},
-    {time:"8:00 AM–3:00 PM",type:"Board Meeting",space:"Elmbrook Boardroom",style:"",order:"629365",att:"10/10/10"},
-    {time:"8:00 AM–3:00 PM",type:"AM Break",dnp:true,att:"10/—/—",sub:true,post:"DO NOT POST"},
-    {time:"11:30 AM–12:00 PM",type:"Reception",space:"Brookfield 1-2-3-4-5",style:"Crescent Rounds",order:"788237",att:"192/224/224"},
-    {time:"12:10–3:30 PM",type:"Lunch",space:"",style:"Crescent Rounds",order:"788237",att:"192/224/224",post:"Lunch and Seminar"}]},
-  {org:"Susan B. Anthony Pro-Life America",contact:"Erica Caporaletti",postAs:"SBA Room Block October 21 2026",quote:"M-WTRQKXW",folio:"1563840",biz:"Group",team:"SM1: James Dobbe",fns:[
-    {time:"7:00 AM–11:00 PM",type:"Meeting",space:"Milwaukee 1-2",style:"Rounds of 8",order:"692921",att:"35/35/35"}]},
-  {org:"RNWBL",contact:"Chelsea Trotta",postAs:"RNWBL Offsite Oct2026",quote:"M-WUJHD0I",folio:"1564901",biz:"Group",team:"SM1: Melinda Massey · Free Parking",fns:[
-    {time:"9:00 AM–5:00 PM",type:"Meeting",space:"Wisconsin 3-4",style:"U-Shape",order:"718031",att:"16/16/16"},
-    {time:"7:30–9:30 AM",type:"Breakfast",att:"16/16/16",sub:true},
-    {time:"11:30 AM–1:00 PM",type:"Lunch",att:"16/16/16",sub:true}]},
-  {org:"LifeStance Health",contact:"Robert Nohr",postAs:"LifeStance Health De-Escalation Training",quote:"M-WQ6HY6E",folio:"1558766",biz:"Group",team:"EM1: Mario Ortiz · SM1: Melinda Massey · Free Parking",fns:[
-    {time:"9:00 AM–5:00 PM",type:"Meeting",space:"Wisconsin 1-2",style:"Conference",order:"145922",att:"25/30/30"},
-    {time:"8:45–9:00 AM",type:"Breakfast",att:"25/30/30",sub:true},
-    {time:"9:00 AM–5:00 PM",type:"Coffee Break",att:"25/30/30",sub:true},
-    {time:"12:00–1:00 PM",type:"Beverage Package",att:"25/30/30",sub:true},
-    {time:"12:00–12:00 PM",type:"Lunch Buffet",att:"25/30/30",sub:true},
-    {time:"2:30–3:00 PM",type:"PM Break",att:"25/30/30",sub:true}]}
-]},
-{key:"oct22",label:"Thu Oct 22",date:"Thursday, October 22, 2026",events:[
-  {org:"National Baptist Convention of the USA Inc. HQ",contact:"Wallace Mills",postAs:"National Baptist Convention Midwest Region 1 Day Workshop Oct2026",quote:"M-WQLW329",folio:"1558762",biz:"Group",team:"EM1: Brooke Steinbach · SM1: Nicole Slemin",fns:[
-    {time:"6:00–9:30 AM",type:"Set Up",space:"Brookfield 1-2-3-4-5",style:"Theatre",order:"806294",att:"175/—/—"},
-    {time:"8:00–9:30 AM",type:"Registration",space:"Brookfield 3 Promenade",style:"",order:"806224",att:"2/—/—"},
-    {time:"9:00–10:30 AM",type:"Meeting",space:"Brookfield 5",style:"Theatre",order:"806224",att:"175/—/80",post:"Worship"},
-    {time:"12:00–1:30 PM",type:"Lunch Buffet",space:"Brookfield 3-4",style:"Rounds of 10",order:"806224",att:"110/110/112",post:"Lunch & Learn"},
-    {time:"1:30–3:00 PM",type:"Breakout",space:"Brookfield 1",style:"Theatre",order:"806224",att:"50/—/50",post:"Breakout 1"},
-    {time:"1:30–3:00 PM",type:"Breakout",space:"Brookfield 2",style:"Theatre",order:"806224",att:"50/—/50",post:"Breakout 2"},
-    {time:"1:30–3:00 PM",type:"Breakout",space:"Brookfield 3-4",style:"Rounds of 10",order:"806224",att:"50/—/112",post:"Breakout 3"},
-    {time:"1:30–3:00 PM",type:"Breakout",space:"Brookfield 5",style:"Theatre",order:"806224",att:"50/—/50",post:"Breakout 4"},
-    {time:"6:30–8:30 PM",type:"Meeting",space:"Brookfield 5",style:"Theatre",order:"806224",att:"175/—/80",post:"Closing Worship"}]},
-  {org:"Susan B. Anthony Pro-Life America",contact:"Erica Caporaletti",postAs:"SBA Room Block October 21 2026",quote:"M-WTRQKXW",folio:"1563840",biz:"Group",team:"SM1: James Dobbe",fns:[
-    {time:"7:00 AM–11:00 PM",type:"Meeting",space:"Milwaukee 1-2",style:"Rounds of 8",order:"692971",att:"35/35/35"},
-    {time:"7:00–9:00 AM",type:"Breakfast",att:"28/35/35",sub:true},
-    {time:"7:00–9:00 PM",type:"Dinner",att:"28/35/35",sub:true}]}
-]},
-{key:"oct23",label:"Fri Oct 23",date:"Friday, October 23, 2026",events:[
-  {org:"Susan B. Anthony Pro-Life America",contact:"Erica Caporaletti",postAs:"SBA Room Block October 21 2026",quote:"M-WTRQKXW",folio:"1563840",biz:"Group",team:"SM1: James Dobbe",fns:[
-    {time:"7:00 AM–11:00 PM",type:"Meeting",space:"Milwaukee 1-2",style:"Rounds of 8",order:"693004",att:"35/35/35"},
-    {time:"7:00–9:00 AM",type:"Breakfast",att:"28/35/35",sub:true},
-    {time:"7:00–9:00 PM",type:"Dinner",att:"28/35/35",sub:true}]},
-  {org:"National Baptist Convention of the USA Inc. HQ",contact:"Leonard Cractic Jr",postAs:"Walter Cade Jr. Midwest States Workshop Oct2026",quote:"M-V3ZK7Z6",folio:"1514731",biz:"Group",team:"EM1: Martelle Shaw · SM1: Kaylene Falkowski",fns:[
-    {time:"7:00 AM–12:00 PM",type:"Set Up",space:"Brookfield 1 Promenade",style:"Exhibits",order:"998017",att:"17/—/—",post:"Load-In"},
-    {time:"3:00–11:59 PM",type:"Board Meeting",space:"Moorland 6",style:"Conference",order:"998027",att:"20/—/—",post:"Executive Board Meeting"},
-    {time:"4:00–10:00 PM",type:"Registration",space:"Elmbrook Boardroom",style:"",order:"898521",att:"1/—/—"},
-    {time:"6:00–10:00 PM",type:"Breakout",space:"Moorland 5",style:"Theatre",order:"998067",att:"30/—/—"},
-    {time:"6:00–10:00 PM",type:"Breakout",space:"Moorland 7",style:"Theatre",order:"998047",att:"30/—/—"},
-    {time:"6:00–10:00 PM",type:"Breakout",space:"Wisconsin 1",style:"Theatre",order:"998077",att:"30/—/—"},
-    {time:"6:00–10:00 PM",type:"Breakout",space:"Wisconsin 2",style:"Theatre",order:"998087",att:"30/—/—"},
-    {time:"6:00–10:00 PM",type:"Breakout",space:"Wisconsin 3",style:"Theatre",order:"998097",att:"30/—/—"},
-    {time:"6:00–10:00 PM",type:"Breakout",space:"Wisconsin 4",style:"Theatre",order:"998107",att:"30/—/—"},
-    {time:"6:00–10:00 PM",type:"Breakout",space:"Wisconsin 6",style:"Theatre",order:"998117",att:"30/—/—"},
-    {time:"6:00–10:00 PM",type:"Breakout",space:"Wisconsin 7",style:"Theatre",order:"998057",att:"30/—/—"},
-    {time:"7:30–9:00 PM",type:"Meeting",space:"Brookfield 1-2-3-4-5",style:"Theatre",order:"433903",att:"100/—/—",post:"Youth Session"}]}
-]},
-{key:"oct24",label:"Sat Oct 24",date:"Saturday, October 24, 2026",events:[
-  {org:"National Baptist Convention of the USA Inc. HQ",contact:"Leonard Cractic Jr",postAs:"Walter Cade Jr. Midwest States Workshop Oct2026",quote:"M-V3ZK7Z6",folio:"1514731",biz:"Group",team:"EM1: Martelle Shaw · SM1: Kaylene Falkowski",fns:[
-    {time:"6:30–7:30 AM",type:"Breakfast",space:"Brookfield 1-2-3-4-5",style:"Rounds of 10",order:"434005",att:"240/220/240",post:"Breakfast Buffet"},
-    {time:"6:30–7:45 AM",type:"Registration",space:"Elmbrook Boardroom",style:"",order:"434104",att:"1/—/—"},
-    {time:"7:00 AM–11:59 PM",type:"Board Meeting",space:"Moorland 6",style:"Conference",order:"433994",att:"20/—/—",post:"Executive Board Meeting"},
-    {time:"8:00–10:00 AM",type:"Breakout",space:"Moorland 5",style:"Theatre",order:"434049",att:"30/—/—"},
-    {time:"8:00–10:00 AM",type:"Breakout",space:"Moorland 7",style:"Theatre",order:"434071",att:"30/—/—"},
-    {time:"8:00–10:00 AM",type:"Breakout",space:"Wisconsin 1",style:"Theatre",order:"434093",att:"30/—/—"},
-    {time:"8:00–10:00 AM",type:"Breakout",space:"Wisconsin 2",style:"Theatre",order:"434082",att:"30/—/—"},
-    {time:"8:00–10:00 AM",type:"Breakout",space:"Wisconsin 3",style:"Theatre",order:"434038",att:"30/—/—"},
-    {time:"8:00–10:00 AM",type:"Breakout",space:"Wisconsin 4",style:"Theatre",order:"434027",att:"30/—/—"},
-    {time:"8:00–10:00 AM",type:"Breakout",space:"Wisconsin 6",style:"Theatre",order:"434016",att:"30/—/—"},
-    {time:"10:00–11:30 AM",type:"General Session",space:"Brookfield 3-4-5",style:"Crescent Rounds",order:"434060",att:"30/248/248"},
-    {time:"12:00–1:30 PM",type:"Lunch",space:"Brookfield 1-2",style:"Rounds of 8",order:"434115",att:"100/96/96",post:"Women's Plated Luncheon"},
-    {time:"6:00–10:00 PM",type:"Dinner",space:"Brookfield 1-2-3-4-5",style:"Rounds of 10",order:"434126",att:"250/246/246",post:"Banquet Dinner"}]},
-  {org:"Susan B. Anthony Pro-Life America",contact:"Erica Caporaletti",postAs:"SBA Room Block October 21 2026",quote:"M-WTRQKXW",folio:"1563840",biz:"Group",team:"SM1: James Dobbe",fns:[
-    {time:"8:45 AM–12:45 AM",type:"Meeting",space:"Milwaukee 1",style:"Rounds of 8",order:"693037",att:"35/35/35"},
-    {time:"7:00–9:00 AM",type:"Breakfast",att:"35/35/35",sub:true},
-    {time:"7:00–9:00 PM",type:"Dinner",att:"35/35/35",sub:true}]},
-  {org:"Tiles Workshop Chicago",contact:"Hubeyb Yalcin",postAs:"Tiles Workshop Chicago Mosaic Lamp Art OCT2026",quote:"M-WOLHAPU",folio:"1556153",biz:"Local",team:"EM1: Mario Ortiz · SM1: Melinda Massey · Free Parking",fns:[
-    {time:"11:00 AM–5:30 PM",type:"Meeting",space:"Milwaukee 2",style:"Special",order:"663079",att:"35/35/35"},
-    {time:"9:30–11:00 AM",type:"Set Up",att:"1/—/—",sub:true}]}
-]},
-{key:"oct25",label:"Sun Oct 25",date:"Sunday, October 25, 2026",events:[
-  {org:"National Baptist Convention of the USA Inc. HQ",contact:"Leonard Cractic Jr",postAs:"Walter Cade Jr. Midwest States Workshop Oct2026",quote:"M-V3ZK7Z6",folio:"1514731",biz:"Group",team:"EM1: Martelle Shaw · SM1: Kaylene Falkowski",fns:[
-    {time:"12:00 AM–11:59 PM",type:"Board Meeting",space:"Moorland 6",style:"Conference",order:"*",att:"20/—/—",post:"Executive Board Meeting"},
-    {time:"5:30–7:00 AM",type:"Meeting",space:"Brookfield 1-2-3-4-5",style:"Rounds of 10",order:"434148",att:"300/—/—",post:"Early Morning Service"},
-    {time:"8:30–9:30 AM",type:"Breakfast Buffet",space:"Brookfield 1-2-3-4-5",style:"Rounds of 10",order:"434159",att:"250/205/248"}]}
-]},
-{key:"oct26",label:"Mon Oct 26",date:"Monday, October 26, 2026",events:[
-  {org:"Rediscover Health",contact:"Dr. Alison La Force",postAs:"Rediscover Health Meeting OCT2026",quote:"M-WVHGFEX",folio:"1563199",biz:"Local",team:"EM1: Mario Ortiz · SM1: Melinda Massey · Free Parking",fns:[
-    {time:"4:45 AM–5:00 PM",type:"Guest Arrival",space:"Milwaukee 1-2",style:"U-Shape",order:"276917",att:"20/20/20",post:"Meeting"},
-    {time:"5:00–8:00 PM",type:"Meeting",space:"Milwaukee 1-2",style:"U-Shape",order:"276917",att:"20/20/20",post:"Rediscover Health"},
-    {time:"5:45–6:05 PM",type:"Client Arrival",dnp:true,att:"20/—/—",sub:true},
-    {time:"6:15–7:15 PM",type:"Dinner",space:"",style:"",order:"276917",dnp:true,att:"20/20/20"}]}
-]},
-{key:"oct27",label:"Tue Oct 27",date:"Tuesday, October 27, 2026",events:[
-  {org:"Molson Coors Beverage Company",contact:"Shannon Combs",postAs:"Molson Coors IT All Hands Oct2026",quote:"M-W4L08NZ",folio:"1541290",biz:"Group",team:"EM1: Martelle Shaw · SM1: Melinda Massey",fns:[
-    {time:"8:00 AM–11:59 PM",type:"Set Up",space:"Brookfield 1-2-3-4-5",style:"Crescent Rounds",order:"459604",att:"250/—/—",post:"Set Up: General Session + Break Out"},
-    {time:"8:00 AM–11:59 PM",type:"Set Up",space:"Milwaukee 1-2",style:"Rounds of 8",order:"*",att:"90/—/—"}]},
-  {org:"Cedar Corporation",contact:"Christine Parmley",postAs:"Cedar Corporation Q3 Meeting",quote:"M-WY335MQ",folio:"1566375",biz:"Local",team:"SM1: Melinda Massey · Free Parking",fns:[
-    {time:"10:00 AM–2:30 PM",type:"Meeting",space:"Wisconsin 1-2",style:"Crescent Rounds",order:"347775",att:"30/30/—"},
-    {time:"10:00 AM–4:00 PM",type:"AM Break",dnp:true,att:"30/—/—",sub:true,post:"Do Not Post"},
-    {time:"12:00–1:00 PM",type:"Lunch Buffet",att:"30/30/—",sub:true}]}
-]},
-{key:"oct28",label:"Wed Oct 28",date:"Wednesday, October 28, 2026",events:[
-  {org:"Lens Crafters",contact:"Tara Koynoff",postAs:"LensCrafters Retail Meeting October 2026",quote:"M-WXXTBLY",folio:"1565372",biz:"Local",team:"EM1: Mario Ortiz · SM1: Melinda Massey · Free Parking",fns:[
-    {time:"7:30–8:00 AM",type:"Client Arrival",space:"Wisconsin 1-2",style:"Rounds of 8",order:"136391",dnp:true,att:"30/30/30",post:"Set Up"},
-    {time:"8:00 AM–5:00 PM",type:"Beverage Package",att:"30/30/30",sub:true},
-    {time:"12:00–1:00 PM",type:"Lunch",att:"30/30/30",sub:true}]},
-  {org:"Molson Coors Beverage Company",contact:"Shannon Combs",postAs:"Molson Coors IT All Hands Oct2026",quote:"M-W4L08NZ",folio:"1541290",biz:"Group",team:"EM1: Martelle Shaw · SM1: Melinda Massey",fns:[
-    {time:"7:30–8:30 AM",type:"Breakfast",space:"Brookfield 3-4-5",style:"Special",order:"545248",att:"250/230/240"},
-    {time:"8:00 AM–5:00 PM",type:"Breakout",space:"Brookfield 1-2",style:"Rounds of 8",order:"139238",att:"90/—/—",post:"Breakout 3"},
-    {time:"8:00 AM–5:00 PM",type:"Meeting",space:"Brookfield 3-4-5",style:"Crescent Rounds",order:"545248",att:"250/—/—",post:"General Session"},
-    {time:"8:00 AM–5:00 PM",type:"Breakout",att:"90/—/—",sub:true},
-    {time:"12:00–1:15 PM",type:"Lunch",att:"250/230/240",sub:true},
-    {time:"2:30–3:30 PM",type:"PM Break",att:"230/230/240",sub:true},
-    {time:"8:00 AM–5:00 PM",type:"Breakout",space:"Milwaukee 1-2",style:"Rounds of 8",order:"459548",att:"90/—/—",post:"Breakout 2"}]}
-]},
-{key:"oct29",label:"Thu Oct 29",date:"Thursday, October 29, 2026",events:[
-  {org:"Molson Coors Beverage Company",contact:"Shannon Combs",postAs:"Molson Coors IT All Hands Oct2026",quote:"M-W4L08NZ",folio:"1541290",biz:"Group",team:"EM1: Martelle Shaw · SM1: Melinda Massey",fns:[
-    {time:"7:30–8:30 AM",type:"Breakfast",space:"Brookfield 3-4-5",style:"Special",order:"853928",att:"250/230/240"},
-    {time:"8:00 AM–5:00 PM",type:"Breakout",space:"Brookfield 1-2",style:"Rounds of 10",order:"459594",att:"90/90/90",post:"Breakout 3"},
-    {time:"8:00 AM–5:00 PM",type:"Meeting",space:"Brookfield 3-4-5",style:"Crescent Rounds",order:"853928",att:"250/230/240",post:"General Session"},
-    {time:"8:00 AM–5:00 PM",type:"Breakout",att:"90/—/—",sub:true},
-    {time:"12:00–1:15 PM",type:"Lunch",att:"230/230/240",sub:true},
-    {time:"2:45–3:30 PM",type:"PM Break",att:"230/230/240",sub:true},
-    {time:"8:00 AM–5:00 PM",type:"Breakout",space:"Milwaukee 1-2",style:"Rounds of 10",order:"459558",att:"90/—/—",post:"Breakout 2"}]},
-  {org:"Geeky Girl, LLC",contact:"Ashley Lewis",postAs:"Meet Me In Milwaukee OCT2026",quote:"M-VOLHSUO",folio:"1522734",biz:"Group",team:"EM1: Brooke Steinbach · SM1: Kaylene Falkowski",fns:[
-    {time:"3:00–8:00 PM",type:"Set Up",space:"Brookfield 3-4-5",style:"Exhibits",order:"423156",att:"1/—/—"}]}
-]},
-{key:"oct30",label:"Fri Oct 30",date:"Friday, October 30, 2026",events:[
-  {org:"Geeky Girl, LLC",contact:"Ashley Lewis",postAs:"Meet Me In Milwaukee OCT2026",quote:"M-VOLHSUO",folio:"1522734",biz:"Group",team:"EM1: Brooke Steinbach · SM1: Kaylene Falkowski",fns:[
-    {time:"3:00–11:59 PM",type:"Reception",space:"Brookfield 1-2",style:"Cocktail Rounds",order:"138012",att:"100/—/—",post:"General Rental"},
-    {time:"3:00–6:00 PM",type:"Set Up",att:"1/—/—",sub:true},
-    {time:"6:00–9:00 PM",type:"Cocktail Reception",att:"118/90/—",sub:true,post:"Meet & Greet"},
-    {time:"9:30–11:59 PM",type:"Set Up",att:"2/—/—",sub:true,post:"Sheraton Room Flip"}]}
-]},
-{key:"oct31",label:"Sat Oct 31",date:"Saturday, October 31, 2026",events:[
-  {org:"Geeky Girl, LLC",contact:"Ashley Lewis",postAs:"Meet Me In Milwaukee OCT2026",quote:"M-VOLHSUO",folio:"1522734",biz:"Group",team:"EM1: Brooke Steinbach · SM1: Kaylene Falkowski",fns:[
-    {time:"7:00 AM–11:39 PM",type:"General Rental",space:"Brookfield 1-2-3-4-5",style:"Exhibits",order:"138250",att:"250/—/—"},
-    {time:"6:00–7:00 AM",type:"Set Up",att:"1/—/—",sub:true,post:"Client Room Access"},
-    {time:"7:00–9:00 AM",type:"Set Up",att:"50/—/—",sub:true,post:"Author Set Up & Breakfast"},
-    {time:"9:00 AM–3:00 PM",type:"Meeting",att:"200/—/—",sub:true,post:"Book Signing"},
-    {time:"11:00 AM–12:00 PM",type:"Lunch",att:"78/—/—",sub:true,post:"Personal Charcuterie Boards"},
-    {time:"3:30–5:30 PM",type:"Set Up",att:"2/—/—",sub:true,post:"Sheraton Room Flip - Brookfield 1-2"},
-    {time:"6:00–9:00 PM",type:"Cocktail Reception",att:"40/—/—",sub:true,post:"After Party"}]}
-]},
-{key:"nov01",label:"Sun Nov 1",date:"Sunday, November 1, 2026",events:[
-  {org:"Slam Events",contact:"Dan Lenz",postAs:"SLAM Con November 2026",quote:"M-WI6CMND",folio:"1549510",biz:"Group",team:"EM1: Mario Ortiz · SM1: James Dobbe",fns:[
-    {time:"5:00 AM–8:00 PM",type:"Trade Show",space:"Brookfield 1-2-3-4-5",style:"Exhibits",order:"947837",att:"1/—/—"},
-    {time:"5:00 AM–8:00 PM",type:"Trade Show",space:"Brookfield 1-2-3-4-5",style:"Exhibits",order:"947837",att:"1/—/—"},
-    {time:"5:00 AM–8:00 PM",type:"Trade Show",space:"Milwaukee 1-2",style:"Exhibits",order:"947852",att:"1/—/—"}]}
-]},
-{key:"nov02",label:"Mon Nov 2",date:"Monday, November 2, 2026",events:[]},
-{key:"nov03",label:"Tue Nov 3",date:"Tuesday, November 3, 2026",events:[]}
-];
 
-// ---- Summary stats ----
-const totalEvents=days.reduce((s,d)=>s+d.events.length,0);
-const groupCount=days.reduce((s,d)=>s+d.events.filter(e=>e.biz==="Group").length,0);
-const localCount=days.reduce((s,d)=>s+d.events.filter(e=>e.biz==="Local").length,0);
-const activeDays=days.filter(d=>d.events.length>0).length;
-document.getElementById('summaryBar').innerHTML=`
-  <div class="stat"><span class="num">${totalEvents}</span><span class="lbl">Definite Event Orders</span></div>
-  <div class="stat"><span class="num">${groupCount}</span><span class="lbl">Group Business</span></div>
-  <div class="stat"><span class="num">${localCount}</span><span class="lbl">Local Business</span></div>
-  <div class="stat"><span class="num">${activeDays}/${days.length}</span><span class="lbl">Days with Events</span></div>`;
+  <main class="card">
+    <div class="logo">H</div>
+    <div class="brand">HKAKSU WORKSPACE</div>
 
-// ---- Render ----
-const tabBar=document.getElementById('tabBar');
-const mainContent=document.getElementById('mainContent');
+    <div class="eyebrow">A New Home for Our Tools</div>
 
-function attCell(att){
-  // highlight GTD (middle) in green if present
-  const parts=(att||"").split("/");
-  if(parts.length===3 && parts[1].trim()!=="—" && parts[1].trim()!==""){
-    return `${parts[0]}/<span class="g">${parts[1]}</span>/${parts[2]}`;
-  }
-  return att||"";
-}
+    <h1>We've Moved!</h1>
 
-days.forEach((day,i)=>{
-  const btn=document.createElement('button');
-  btn.className='tab-btn'+(i===0?' active':'');
-  btn.innerHTML=`${day.label}<span class="count">${day.events.length}</span>`;
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('tab-'+day.key).classList.add('active');
-    window.scrollTo({top:0,behavior:'smooth'});
-  });
-  tabBar.appendChild(btn);
+    <p>
+      This application is now part of the new
+      <strong style="color:#fff">HKAKSU Workspace</strong>.
+      All our tools and applications are available
+      in one centralized location.
+    </p>
 
-  const div=document.createElement('div');
-  div.className='tab-content'+(i===0?' active':'');
-  div.id='tab-'+day.key;
-  div.innerHTML=`<div class="day-header"><h2>${day.date}</h2><span class="day-meta">${day.events.length} definite event${day.events.length!==1?'s':''}</span></div>`;
+    <a class="button" href="https://hkaksu.com/">
+      Continue to New Website &rarr;
+    </a>
 
-  const grid=document.createElement('div');
-  grid.className='events-grid';
+    <div class="url">hkaksu.com</div>
 
-  if(day.events.length===0){
-    grid.innerHTML=`<div style="padding:30px;text-align:center;color:var(--muted);font-size:13px;background:var(--surface);border:1px dashed var(--border);border-radius:8px">No definite events on this date.</div>`;
-  }
+    <div class="footer">
+      You will be redirected automatically in
+      <strong id="countdown">5</strong> seconds.
+      <div class="progress"></div>
+    </div>
+  </main>
 
-  day.events.forEach(ev=>{
-    const card=document.createElement('div');
-    card.className='event-card';
-    const bizClass=ev.biz==="Group"?"group":"local";
-    const rows=ev.fns.map(f=>{
-      if(f.sub){
-        return `<tr class="sub">
-          <td class="fn-time">${f.time}</td>
-          <td colspan="2" class="${f.post?'fn-post':''}">${f.type}${f.post?` — ${f.post}`:''}${f.dnp?'<span class="dnp-pill">DNP</span>':''}</td>
-          <td class="fn-att">${attCell(f.att)}</td>
-          <td class="fn-order col-ord"></td>
-        </tr>`;
+  <script>
+    let seconds = 5;
+
+    const timer = setInterval(() => {
+      seconds--;
+      document.getElementById("countdown").textContent =
+        Math.max(seconds, 0);
+
+      if (seconds <= 0) {
+        clearInterval(timer);
+        window.location.replace("https://hkaksu.com/");
       }
-      return `<tr>
-        <td class="fn-time">${f.time}</td>
-        <td>${f.type}${f.dnp?'<span class="dnp-pill">DNP</span>':''}${f.post?`<br><span style="color:var(--muted);font-size:11px">${f.post}</span>`:''}${f.style?`<br><span style="color:var(--muted);font-size:10.5px;font-family:'DM Mono',monospace">${f.style}</span>`:''}</td>
-        <td class="fn-space">${f.space||''}</td>
-        <td class="fn-att">${attCell(f.att)}</td>
-        <td class="fn-order col-ord">${f.order||''}</td>
-      </tr>`;
-    }).join('');
+    }, 1000);
+  </script>
 
-    card.innerHTML=`
-      <div class="card-head">
-        <div>
-          <div class="org-name">${ev.org}</div>
-          <div class="post-as">${ev.postAs}</div>
-          <div class="head-meta">Contact: <b>${ev.contact}</b> · Quote ${ev.quote} · Folio ${ev.folio}<br>${ev.team}</div>
-        </div>
-        <div class="badges">
-          <span class="badge ${bizClass}">${ev.biz}</span>
-        </div>
-      </div>
-      <table class="fn-table">
-        <thead><tr>
-          <th>Time</th><th>Function</th><th>Space</th>
-          <th class="col-att">EXP/GTD/SET</th><th class="col-ord">Order #</th>
-        </tr></thead>
-        <tbody>${rows}</tbody>
-      </table>`;
-    grid.appendChild(card);
-  });
-
-  div.appendChild(grid);
-  mainContent.appendChild(div);
-});
-</script>
 </body>
 </html>
